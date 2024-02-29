@@ -1,59 +1,68 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { useState } from 'react';
-import { CgMenuGridR } from 'react-icons/cg';
-import { IoMdClose } from 'react-icons/io';
-
-/* import LinkedInLogo from '../assets/linkedin-logo.svg';
+import LinkedInLogo from '../assets/linkedin-logo.svg';
 import FBLogo from '../assets/facebook-logo.svg';
-import GithubLogo from '../assets/github-logo.svg'; */
+import GithubLogo from '../assets/github-logo.svg';
+import MenuOpen from '../assets/menu-open.svg';
+import MenuClose from '../assets/menu-close.svg';
+import Typewriter from './Typewriter';
 
 function Layout() {
   const [isOpen, setIsOpen] = useState(false);
+  const displayText = "Yeeeees, it's still me.";
+
+  const handleMenuToggle = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div className="bg-craft flex flex-col min-h-screen bg-bottom">
       <div className="container mx-auto flex-grow">
-        <nav className="flex items-center justify-between flex-wrap p-6">
-          <div className="flex items-center flex-shrink-0 text-white mr-6 lg:mr-72">
-            <p>logo helye</p>
-          </div>
-          <div className="block lg:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="flex items-center px-3 py-2 rounded text-black-500 hover:text-black-400"
-            >
-              <CgMenuGridR className={`fill-current h-5 w-5 ${isOpen ? 'hidden' : 'block'}`} />
-              <IoMdClose className={`fill-current h-5 w-5 ${isOpen ? 'block' : 'hidden'}`} />
-            </button>
-          </div>
-          <div className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${isOpen ? 'block' : 'hidden'}`}>
-            <div className="text-sm lg:flex-grow">
-              <NavLink to="/" href="#" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-                Home
-              </NavLink>
-              <NavLink to="/about" href="#" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-                About
-              </NavLink>
+        <header className="flex flex-col md:items-center py-5">
+          <nav
+            className={`absolute top-0 right-0 text-right md:relative md:flex md:w-auto font-reenie text-3xl uppercase ${isOpen ? 'block bg-white min-h-screen py-4 px-4 w-1/10' : 'hidden'}`}
+          >
+            <div className="md:hidden flex justify-center">
+              <div
+                onClick={handleMenuToggle}
+                className={`h-10 w-10 md:absolute cursor-pointer ${isOpen ? 'block z-10' : 'hidden'}`}
+                role="button"
+                tabIndex={0}
+              >
+                <img src={MenuClose} className="h-full w-full" alt="close menu icon" />
+              </div>
+            </div>
+            <NavLink to="/" href="#home" className="block mt-4 md:inline-block md:mt-0 md:mr-6">
+              Home
+            </NavLink>
+            <NavLink to="/about" href="#about" className="block mt-4 md:inline-block md:mt-0 md:mr-6">
+              About me
+            </NavLink>
+            <NavLink to="/about" href="#" className="block mt-4 md:inline-block md:mt-0 md:mr-6">
+              Skills
+            </NavLink>
+            <NavLink to="/about" href="#" className="block mt-4 md:inline-block md:mt-0">
+              Contact
+            </NavLink>
+          </nav>
 
-              <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-                Third Link
-              </a>
-              <a href="#" className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">
-                Fourth Link
-              </a>
+          <div className="flex flex-row justify-between items-center md:justify-center relative h-8">
+            <div>LOGO</div>
+            <div onClick={handleMenuToggle} className="md:hidden cursor-pointer" role="button" tabIndex={0}>
+              <img src={MenuOpen} className={`h-10 w-10 ${isOpen ? 'hidden' : 'block'}`} alt="open menu icon" />
             </div>
           </div>
-        </nav>
+        </header>
         <Outlet />
       </div>
       <footer>
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div>
-              <div className="font-poiret font-semibold text-gray-800 mt-3 text-xl">
-                <p>DO YOU WANT TO KNOW MORE ABOUT ME?</p>
+              <div className="text-gray-800 mt-3 text-xl font-semibold uppercase">
+                <Typewriter text={displayText} />
               </div>
-              {/*         <div className="flex mt-8 space-x-5">
+              <div className="flex mt-8 space-x-5">
                 <a
                   className="hover:opacity-75 hover:scale-110 cursor-pointer"
                   href="https://facebook.com/Babszem/"
@@ -78,10 +87,10 @@ function Layout() {
                 >
                   <img src={LinkedInLogo} className="h-11" alt="logo" />
                 </a>
-              </div> */}
+              </div>
             </div>
             <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
-              <div></div>
+              <div />
             </div>
           </div>
         </div>

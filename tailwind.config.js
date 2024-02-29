@@ -12,7 +12,7 @@ export default {
         craft: "url('/src/assets/craft.webp')",
       },
       container: {
-        padding: "5%"
+        padding: '7%',
       },
       scale: {
         110: '1.1',

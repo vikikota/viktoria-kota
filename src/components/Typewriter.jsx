@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 function Typewriter({ text }) {
   const [displayText, setDisplayText] = useState('');
@@ -8,7 +9,7 @@ function Typewriter({ text }) {
     const timer = setInterval(() => {
       if (currentIndex <= text.length) {
         setDisplayText(text.slice(0, currentIndex));
-        currentIndex++;
+        currentIndex += 1;
       } else {
         clearInterval(timer);
       }
@@ -17,7 +18,11 @@ function Typewriter({ text }) {
     return () => clearInterval(timer);
   }, [text]);
 
-  return <div className="font-reenie text-5xl">{displayText}</div>;
+  return <div className="font-reenie">{displayText}</div>;
 }
+
+Typewriter.propTypes = {
+  text: PropTypes.string.isRequired,
+};
 
 export default Typewriter;
