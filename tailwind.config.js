@@ -17,6 +17,7 @@ export default {
       scale: {
         110: '1.1',
       },
+      fill: ['hover', 'focus'],
     },
     plugins: [],
   },
