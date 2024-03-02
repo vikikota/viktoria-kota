@@ -18,7 +18,7 @@ function Typewriter({ text }) {
     return () => clearInterval(timer);
   }, [text]);
 
-  return <div className="font-reenie">{displayText}</div>;
+  return <div>{displayText}</div>;
 }
 
 Typewriter.propTypes = {
