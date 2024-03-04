@@ -9,7 +9,7 @@ function Contact() {
       <div className="flex flex-col w-full md:w-1/2">
         <form className="">
           <div className="flex flex-col py-3">
-            <label for="name" className="font-elite text-gray-800">
+            <label htmlFor="name" className="font-elite text-gray-800">
               Name
             </label>
             <input
@@ -22,7 +22,7 @@ function Contact() {
             />
           </div>
           <div className="flex flex-col py-3">
-            <label for="name" className="font-elite text-gray-800">
+            <label htmlFor="name" className="font-elite text-gray-800">
               Email
             </label>
             <input
@@ -35,7 +35,7 @@ function Contact() {
             />
           </div>
           <div className="flex flex-col py-3">
-            <label for="about" class="font-elite text-gray-800">
+            <label htmlFor="about" className="font-elite text-gray-800">
               Message
             </label>
             <textarea
@@ -45,7 +45,7 @@ function Contact() {
               placeholder="your message"
               className="p-2 border-b-2 border-orange-700 focus:rounded-none focus:border-orange-700 focus:border-b-4 focus:outline-none
  placeholder:text-slate-400 text-sm shadow-sm leading-6"
-            ></textarea>
+             />
           </div>
         </form>
       </div>
