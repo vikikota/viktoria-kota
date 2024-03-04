@@ -10,11 +10,9 @@ import GithubLogo from '../assets/github-logo.png';
 import GithubLogoHover from '../assets/github-logo-hover.png';
 import LinkedinLogo from '../assets/linkedin-logo.png';
 import LinkedinLogoHover from '../assets/linkedin-logo-hover.png';
-import Typewriter from './Typewriter';
 
 function Layout() {
   const [isOpen, setIsOpen] = useState(false);
-  const displayText = "Yeees, it's still me :)";
 
   const handleMenuToggle = () => {
     setIsOpen(!isOpen);
@@ -23,60 +21,9 @@ function Layout() {
   return (
     <div className="bg-craft flex flex-col min-h-screen bg-bottom">
       <div className="container mx-auto flex-grow">
-        <header className="flex flex-col md:items-center py-5">
-          <nav
-            className={`menu absolute top-0 right-0 text-right md:relative md:flex md:w-auto font-reenie font-medium uppercase ${isOpen ? 'block bg-black bg-opacity-10 min-h-screen py-4 px-4 w-1/10 shadow-lg' : 'hidden'}`}
-          >
-            <div className="md:hidden flex justify-center">
-              <div
-                onClick={handleMenuToggle}
-                className={`h-10 w-10 md:absolute cursor-pointer ${isOpen ? 'block z-10' : 'hidden'}`}
-                role="button"
-                tabIndex={0}
-              >
-                <img src={MenuClose} className="h-full w-full" alt="close menu icon" />
-              </div>
-            </div>
-            <NavLink
-              to="/"
-              href="#home"
-              onClick={handleMenuToggle}
-              className="flex flex-col items-center mt-4 md:inline-block md:mt-0 md:mr-6 hover:scale-110 text-gray-800 hover:text-orange-700"
-            >
-              <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="home icon" />
-              <p className="text-xl md:text-3xl">HOME</p>
-            </NavLink>
-            <NavLink
-              to="/about"
-              href="#about"
-              onClick={handleMenuToggle}
-              className="flex flex-col items-center mt-4 md:inline-block md:mt-0 md:mr-6 hover:scale-110 text-gray-800 hover:text-orange-700"
-            >
-              <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="about icon" />
-              <p className="text-xl md:text-3xl">ME</p>
-            </NavLink>
-            <NavLink
-              to="/about"
-              href="#about"
-              onClick={handleMenuToggle}
-              className="flex flex-col items-center mt-4 md:inline-block md:mt-0 md:mr-6 hover:scale-110 text-gray-800 hover:text-orange-700"
-            >
-              <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="skills icon" />
-              <p className="text-xl md:text-3xl">SKILLS</p>
-            </NavLink>
-            <NavLink
-              to="/about"
-              href="#"
-              onClick={handleMenuToggle}
-              className="flex flex-col items-center mt-4 md:inline-block md:mt-0 md:mr-0 hover:scale-110 text-gray-800 hover:text-orange-700"
-            >
-              <img src={Contact} className={`${isOpen ? 'h-8 w-10 block' : 'hidden'}`} alt="contact icon" />
-              <p className="text-xl md:text-3xl">CONTACT</p>
-            </NavLink>
-          </nav>
-
+        <header className="flex flex-col md:items-center pt-7 md:pt-9">
           <div className="flex flex-row justify-between items-center md:justify-center relative h-8">
-            <div>LOGO</div>
+            <div className="font-alfa text-gray-700 text-2xl ">Viktória Kóta</div>
             <div onClick={handleMenuToggle} className="md:hidden cursor-pointer" role="button" tabIndex={0}>
               <img
                 src={MenuOpen}
@@ -85,18 +32,66 @@ function Layout() {
               />
             </div>
           </div>
+          <nav
+            className={`absolute top-0 right-0 text-right md:relative md:flex md:w-auto font-elite  ${isOpen ? 'block bg-black bg-opacity-10 min-h-screen py-4 px-4 w-1/10 shadow-lg' : 'hidden'}`}
+          >
+            <div className="md:hidden flex justify-center">
+              <div
+                onClick={handleMenuToggle}
+                className={`h-10 w-10 md:absolute cursor-pointer ${isOpen ? 'block z-10' : 'hidden'}`}
+                role="button"
+                tabIndex={0}
+              >
+                <img src={MenuClose} className="h-full" alt="close menu icon" />
+              </div>
+            </div>
+            <NavLink
+              to="/"
+              href="#home"
+              onClick={isOpen ? handleMenuToggle : ''}
+              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-orange-800"
+            >
+              <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="home icon" />
+              <p className="text-xl md:text-2xl">Home</p>
+            </NavLink>
+            <NavLink
+              to="/about"
+              href="#about"
+              onClick={isOpen ? handleMenuToggle : ''}
+              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-orange-800"
+            >
+              <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="about icon" />
+              <p className="text-xl md:text-2xl">Me</p>
+            </NavLink>
+            <NavLink
+              to="/about"
+              href="#about"
+              onClick={isOpen ? handleMenuToggle : ''}
+              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-orange-800"
+            >
+              <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="skills icon" />
+              <p className="text-xl md:text-2xl">Skills</p>
+            </NavLink>
+            <NavLink
+              to="/contact"
+              href="#"
+              onClick={isOpen ? handleMenuToggle : ''}
+              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-0 hover:scale-110 text-gray-700 hover:text-orange-800"
+            >
+              <img src={Contact} className={`${isOpen ? 'h-8 w-10 block' : 'hidden'}`} alt="contact icon" />
+              <p className="text-xl md:text-2xl">Contact</p>
+            </NavLink>
+          </nav>
         </header>
         <Outlet />
       </div>
       <footer className="container mx-auto py-4">
         <div className="flex flex-col items-center md:items-stretch">
-          <div className="text-gray-800 mt-3 text-xl font-reenie font-semibold uppercase">
-            <Typewriter text={displayText} />
-          </div>
+          <div className="text-gray-800 mt-3 md:text-md font-sanchez font-semibold">Yeees, it's still me :)</div>
           <div className="flex flex-col md:flex-row md:justify-between">
             <div className="flex mt-3 space-x-4 md:space-x-5">
               <a
-                className="flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
+                className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
                 href="https://facebook.com/Babszem/"
                 target="_blank"
                 rel="noreferrer"
@@ -106,14 +101,10 @@ function Layout() {
                   alt="fb logo"
                   className=" transition duration-300 transform w-9 opacity-100 hover:opacity-0"
                 />
-                <img
-                  src={FBLogoHover}
-                  alt="fb logo hover"
-                  className="w-9 absolute top-0 left-0 opacity-0 hover:opacity-100"
-                />
+                <img src={FBLogoHover} alt="fb logo hover" className="w-9 absolute opacity-0 hover:opacity-100" />
               </a>
               <a
-                className="flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
+                className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
                 href="https://github.com/vikikota"
                 target="_blank"
                 aria-label="github button"
@@ -127,11 +118,11 @@ function Layout() {
                 <img
                   src={GithubLogoHover}
                   alt="github logo hover"
-                  className="w-9 absolute left-0 top-0 opacity-0 hover:opacity-100"
+                  className="w-9 absolute opacity-0 hover:opacity-100 "
                 />
               </a>
               <a
-                className="flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
+                className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
                 href="https://www.linkedin.com/in/viktoria-kota-1b0a382ab/"
                 target="_blank"
                 aria-label="linkedin button"
@@ -145,11 +136,13 @@ function Layout() {
                 <img
                   src={LinkedinLogoHover}
                   alt="Linkedin logo hover"
-                  className="w-9 absolute left-0 top-0 opacity-0 hover:opacity-100"
+                  className="w-9 absolute opacity-0 hover:opacity-100"
                 />
               </a>
             </div>
-            <div className="mt-6 md:mt-0 text-center text-sm">© 2024 Viktória Kóta</div>
+            <div className="mt-6 md:mt-0 text-center text-sm font-sanchez font text-gray-800">
+              © 2024 Viktória Kóta
+            </div>
           </div>
         </div>
       </footer>
