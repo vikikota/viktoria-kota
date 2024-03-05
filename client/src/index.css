@@ -1,0 +1,45 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Reenie+Beanie&family=Sanchez:ital@0;1&family=Special+Elite&display=swap');
+@font-face {
+  font-family: Akbar;
+  src: url('fonts/akbar.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: artomoro;
+  src: url('fonts/artomoro.ttf') format('opentype');
+}
+
+input:-webkit-autofill {
+  border-bottom: 2px solid rgb(194 65 12);
+  -webkit-text-fill-color: rgb(0, 0, 0);
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+  box-shadow: 0 0 0px 1000px white inset;
+  transition: background-color 1000s ease-in-out 0s;
+  color: white;
+}
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover {
+  border-bottom: 2px solid rgb(194 65 12);
+  -webkit-text-fill-color: rgb(0, 0, 0);
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+  box-shadow: 0 0 0px 1000px white inset;
+  transition: background-color 1000s ease-in-out 0s;
+  color: white;
+}
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid #253341;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #253341 inset;
+  box-shadow: 0 0 0px 1000px #253341 inset;
+  transition: white 5000s ease-in-out 0s;
+  color: white;
+}

@@ -20,8 +20,8 @@ function Layout() {
 
   return (
     <div className="bg-craft flex flex-col min-h-screen bg-bottom">
-      <div className="container mx-auto flex-grow">
-        <header className="flex flex-col md:items-center pt-7 md:pt-9">
+      <div className="container mx-auto flex flex-col justify-around flex-grow">
+        <header className="flex flex-col md:items-center pt-7 md:pt-4">
           <div className="flex flex-row justify-between items-center md:justify-center relative h-8">
             <div className="font-alfa text-gray-700 text-2xl ">Viktória Kóta</div>
             <div onClick={handleMenuToggle} className="md:hidden cursor-pointer" role="button" tabIndex={0}>
@@ -85,10 +85,10 @@ function Layout() {
         </header>
         <Outlet />
       </div>
-      <footer className="container mx-auto py-4">
+      <footer className="container mx-auto pt-2 pb-4">
         <div className="flex flex-col items-center md:items-stretch">
-          <div className="text-gray-800 mt-3 md:text-md font-sanchez font-semibold">Yeees, it's still me :)</div>
-          <div className="flex flex-col md:flex-row md:justify-between">
+          <div className="text-gray-800 md:text-md font-sanchez font-semibold">Yeees, it is still me :)</div>
+          <div className="flex flex-col md:flex-row md:justify-between items-center">
             <div className="flex mt-3 space-x-4 md:space-x-5">
               <a
                 className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
@@ -140,9 +140,7 @@ function Layout() {
                 />
               </a>
             </div>
-            <div className="mt-6 md:mt-0 text-center text-sm font-sanchez font text-gray-800">
-              © 2024 Viktória Kóta
-            </div>
+            <div className="mt-4 md:mt-0 text-center text-sm font-sanchez text-gray-800">© 2024 Viktória Kóta</div>
           </div>
         </div>
       </footer>

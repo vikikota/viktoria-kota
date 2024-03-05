@@ -5,7 +5,7 @@ function Home() {
   const displayText = 'AND I LOVE CODING';
 
   return (
-    <div className="container mt-12 md:mt-0 flex flex-col md:flex-row justify-around items-center">
+    <div className="container flex flex-col md:flex-row">
       <div className="flex flex-col">
         <div className="font-elite text-xl md:text-2xl lg:text-3xl text-orange-800 font-bold uppercase">Oh hi!</div>
         <div className="font-elite text-xl md:text-2xl lg:text-3xl text-orange-800 font-bold uppercase">
