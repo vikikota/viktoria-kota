@@ -40,11 +40,11 @@ function Contact() {
   }, [state.succeeded]);
 
   return (
-    <div className="flex flex-col md:flex-row justify-around items-center">
-      <div className="flex justify-center">
-        <img src={postbird} alt="postman birdie" className="w-2/5 md:w-3/5 me-0 md:me-20 mt-5" />
+    <div className="flex flex-col md:flex-row justify-around items-center my-auto">
+      <div className="flex justify-center lg:w-1/2">
+        <img src={postbird} alt="postman birdie" className="w-2/5 md:w-4/5 lg:w-3/5 me-0 md:me-20 mt-5" />
       </div>
-      <div className="flex flex-col w-full md:w-1/2">
+      <div className="flex flex-col w-full lg:w-1/2">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col py-2">
             <label htmlFor="name" className="font-elite text-gray-800">

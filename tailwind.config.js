@@ -20,6 +20,9 @@ export default {
       scale: {
         110: '1.1',
       },
+      screens: {
+        xs: '475px',
+      },
       fill: ['hover', 'focus'],
     },
     plugins: [require('@tailwindcss/forms')],

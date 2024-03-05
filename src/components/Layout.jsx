@@ -20,8 +20,8 @@ function Layout() {
 
   return (
     <div className="bg-craft flex flex-col min-h-screen bg-bottom">
-      <div className="container mx-auto flex flex-col justify-around flex-grow">
-        <header className="flex flex-col md:items-center pt-7 md:pt-4">
+      <div className="container mx-auto flex flex-col justify-between flex-grow">
+        <header className="flex flex-col md:items-center pt-6 md:pt-8">
           <div className="flex flex-row justify-between items-center md:justify-center relative h-8">
             <div className="font-alfa text-gray-700 text-2xl ">Viktória Kóta</div>
             <div onClick={handleMenuToggle} className="md:hidden cursor-pointer" role="button" tabIndex={0}>
