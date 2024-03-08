@@ -1,15 +1,11 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Reenie+Beanie&family=Sanchez:ital@0;1&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Reenie+Beanie&family=Sanchez:ital@0;1&family=Special+Elite&display=swap');
+
 @font-face {
   font-family: Akbar;
   src: url('fonts/akbar.ttf') format('opentype');
-}
-
-@font-face {
-  font-family: artomoro;
-  src: url('fonts/artomoro.ttf') format('opentype');
 }
 
 input:-webkit-autofill {

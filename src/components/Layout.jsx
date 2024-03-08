@@ -3,27 +3,36 @@ import { useState } from 'react';
 import MenuOpen from '../assets/menu-open.svg';
 import MenuClose from '../assets/menu-close.svg';
 import Home from '../assets/home-icon.svg';
-import Contact from '../assets/contact-icon.svg';
 import FBLogo from '../assets/facebook-logo.png';
+import contact from '../assets/contact-icon.svg';
 import FBLogoHover from '../assets/facebook-logo-hover.png';
 import GithubLogo from '../assets/github-logo.png';
 import GithubLogoHover from '../assets/github-logo-hover.png';
 import LinkedinLogo from '../assets/linkedin-logo.png';
 import LinkedinLogoHover from '../assets/linkedin-logo-hover.png';
+import Contact from './Contact';
+import ScrollDown from './ScrollDown';
 
 function Layout() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleClickScroll = () => {
+    const element = document.querySelector('#contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const handleMenuToggle = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <div className="bg-craft flex flex-col min-h-screen bg-bottom">
-      <div className="container mx-auto flex flex-col justify-between flex-grow">
+    <div className="bg-craft flex flex-col bg-bottom">
+      <div className="container mx-auto flex flex-col flex-grow-1  justify-between max-w-[1200px] md:w-4/5 min-h-dvh 2xl:min-h-96">
         <header className="flex flex-col md:items-center pt-6 md:pt-8">
           <div className="flex flex-row justify-between items-center md:justify-center relative h-8">
-            <div className="font-alfa text-gray-700 text-2xl ">Viktória Kóta</div>
+            <div className="font-osvald font-bold text-gray-700 text-2xl ">Viktória Kóta</div>
             <div onClick={handleMenuToggle} className="md:hidden cursor-pointer" role="button" tabIndex={0}>
               <img
                 src={MenuOpen}
@@ -73,21 +82,30 @@ function Layout() {
               <p className="text-xl md:text-2xl">Skills</p>
             </NavLink>
             <NavLink
-              to="/contact"
-              href="#"
-              onClick={isOpen ? handleMenuToggle : ''}
+              onClick={
+                isOpen
+                  ? () => {
+                      handleClickScroll();
+                      handleMenuToggle();
+                    }
+                  : handleClickScroll
+              }
               className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-0 hover:scale-110 text-gray-700 hover:text-orange-800"
             >
-              <img src={Contact} className={`${isOpen ? 'h-8 w-10 block' : 'hidden'}`} alt="contact icon" />
+              <img src={contact} className={`${isOpen ? 'h-8 w-10 block' : 'hidden'}`} alt="contact icon" />
               <p className="text-xl md:text-2xl">Contact</p>
             </NavLink>
           </nav>
         </header>
         <Outlet />
+        <ScrollDown />
       </div>
-      <footer className="container mx-auto pt-2 pb-4">
+      <div id="contact">
+        <Contact />
+      </div>
+      <footer className="container mx-auto py-4">
         <div className="flex flex-col items-center md:items-stretch">
-          <div className="text-gray-800 md:text-md font-sanchez font-semibold">Yeees, it is still me :)</div>
+          <div className="text-gray-800 md:text-md font-osvald font-bold">Yeees, it is still me :)</div>
           <div className="flex flex-col md:flex-row md:justify-between items-center">
             <div className="flex mt-3 space-x-4 md:space-x-5">
               <a
@@ -140,7 +158,7 @@ function Layout() {
                 />
               </a>
             </div>
-            <div className="mt-4 md:mt-0 text-center text-sm font-sanchez text-gray-800">© 2024 Viktória Kóta</div>
+            <div className="mt-4 md:mt-0 text-center text-sm font-osvald text-gray-800">© 2024 Viktória Kóta</div>
           </div>
         </div>
       </footer>

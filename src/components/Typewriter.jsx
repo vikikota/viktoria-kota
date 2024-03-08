@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 function Typewriter({ texts }) {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -24,5 +25,9 @@ function Typewriter({ texts }) {
 
   return <div>{displayText}</div>;
 }
+
+Typewriter.propTypes = {
+  texts: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Typewriter;
