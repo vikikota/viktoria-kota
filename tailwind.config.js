@@ -8,7 +8,6 @@ export default {
         reenie: ['Reenie Beanie', 'system-ui'],
         sanchez: ['Sanchez', 'system-ui'],
         elite: ['Special Elite', 'system-ui'],
-        akbar: ['akbar', 'system-ui'],
         alfa: ['Alfa Slab One', 'system-ui'],
       },
       backgroundImage: {
