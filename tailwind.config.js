@@ -8,7 +8,7 @@ export default {
         reenie: ['Reenie Beanie', 'system-ui'],
         sanchez: ['Sanchez', 'system-ui'],
         elite: ['Special Elite', 'system-ui'],
-        osvald: ['osvald', 'system-ui'],
+        osvald: ['Osvald', 'system-ui'],
       },
       backgroundImage: {
         craft: "url('/src/assets/craft.webp')",

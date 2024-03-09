@@ -11,8 +11,8 @@ import GithubLogoHover from '../assets/github-logo-hover.png';
 import LinkedinLogo from '../assets/linkedin-logo.png';
 import LinkedinLogoHover from '../assets/linkedin-logo-hover.png';
 import Contact from './Contact';
+import ResumeDownload from './ResumeDownload';
 import ScrollDown from './ScrollDown';
-
 function Layout() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -29,7 +29,7 @@ function Layout() {
 
   return (
     <div className="bg-craft flex flex-col bg-bottom">
-      <div className="container mx-auto flex flex-col flex-grow-1  justify-between max-w-[1200px] md:w-4/5 min-h-dvh 2xl:min-h-96">
+      <div className="container mx-auto flex flex-col flex-grow-1  justify-between max-w-[1200px] md:w-4/5 min-h-dvh lg:min-h-[700px] ">
         <header className="flex flex-col md:items-center pt-6 md:pt-8">
           <div className="flex flex-row justify-between items-center md:justify-center relative h-8">
             <div className="font-osvald font-bold text-gray-700 text-2xl ">Viktória Kóta</div>
@@ -61,7 +61,7 @@ function Layout() {
               className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-orange-800"
             >
               <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="home icon" />
-              <p className="text-xl md:text-2xl">Home</p>
+              <p className="text-xl md:text-2xl lg:text-3xl">Home</p>
             </NavLink>
             <NavLink
               to="/about"
@@ -70,7 +70,7 @@ function Layout() {
               className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-orange-800"
             >
               <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="about icon" />
-              <p className="text-xl md:text-2xl">Me</p>
+              <p className="text-xl md:text-2xl lg:text-3xl">Me</p>
             </NavLink>
             <NavLink
               to="/about"
@@ -79,7 +79,16 @@ function Layout() {
               className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-orange-800"
             >
               <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="skills icon" />
-              <p className="text-xl md:text-2xl">Skills</p>
+              <p className="text-xl md:text-2xl lg:text-3xl">Skills</p>
+            </NavLink>
+            <NavLink
+              to="/works"
+              href="#works"
+              onClick={isOpen ? handleMenuToggle : ''}
+              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-orange-800"
+            >
+              <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="skills icon" />
+              <p className="text-xl md:text-2xl lg:text-3xl">Works</p>
             </NavLink>
             <NavLink
               onClick={
@@ -93,12 +102,18 @@ function Layout() {
               className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-0 hover:scale-110 text-gray-700 hover:text-orange-800"
             >
               <img src={contact} className={`${isOpen ? 'h-8 w-10 block' : 'hidden'}`} alt="contact icon" />
-              <p className="text-xl md:text-2xl">Contact</p>
+              <p className="text-xl md:text-2xl lg:text-3xl">Contact</p>
             </NavLink>
           </nav>
         </header>
         <Outlet />
+        <div className="hidden md:block">
+          <ResumeDownload />
+        </div>
         <ScrollDown />
+      </div>
+      <div className="block md:hidden">
+        <ResumeDownload />
       </div>
       <div id="contact">
         <Contact />

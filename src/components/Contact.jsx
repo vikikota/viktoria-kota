@@ -107,7 +107,7 @@ function Contact() {
                 <button
                   type="submit"
                   disabled={state.submitting}
-                  className="mt-2 py-2 px-3 font-elite text-white bg-orange-800 hover:scale-105"
+                  className="mt-2 py-2 px-3 font-elite text-white bg-orange-800 shadow-sm hover:scale-105"
                 >
                   SEND
                 </button>
