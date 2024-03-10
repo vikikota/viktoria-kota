@@ -31,7 +31,7 @@ function Layout() {
 
   return (
     <div className="bg-craft flex flex-col bg-bottom">
-      <div className="container mx-auto flex flex-col justify-between max-w-[1000px] md:w-4/5 h-dvh">
+      <div className="container mx-auto flex flex-col justify-between max-w-[1200px] md:w-4/5 h-dvh">
         <header className="flex flex-col md:items-center pt-6 md:pt-8">
           <div className="flex flex-row justify-between items-center md:justify-center relative h-8">
             <div className="font-unica font-bold text-gray-700 text-2xl ">Viktória Kóta</div>
@@ -117,7 +117,7 @@ function Layout() {
       <div id="resume" className="flex md:hidden w-4/5 mx-auto">
         <ResumeDownload />
       </div>
-      <div>
+      <div id="about-me">
         <AboutMeShort className=" w-4/5 mx-auto" />
       </div>
       <div id="contact">

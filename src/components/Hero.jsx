@@ -21,21 +21,21 @@ function Hero() {
 
   return (
     <div>
-      <div className="flex flex-col md:flex-row justify-between items-center max-w-[1000px]">
-        <div className="flex flex-col items-center md:items-start w-full sm:w-2/5 md:w-2/5 my-4">
-          <div className="py-4">
-            <div className="font-elite text-lg sm:text-xl md:text-2xl lg:text-3xl text-orange-800 font-bold uppercase">
+      <div className="flex flex-col md:flex-row justify-between items-center max-w-[1200px]">
+        <div className="flex flex-col items-center md:items-start w-full sm:w-2/5 md:w-2/5 xl:w-1/3 my-4">
+          <div className="py-4 md:ps-12">
+            <div className="font-elite text-xl sm:text-2xl md:text-2xl lg:text-3xl text-orange-800 font-bold uppercase">
               Oh hi!
             </div>
             <div className="flex flex-row sm:flex-col">
-              <div className="font-elite text-lg sm:text-xl md:text-2xl lg:text-3xl text-orange-800 font-bold uppercase">
+              <div className="font-elite text-xl sm:text-2xl md:text-2xl lg:text-3xl text-orange-800 font-bold uppercase">
                 <p> I am a junior&nbsp;</p>
               </div>
-              <div className="font-elite text-lg sm:text-xl md:text-2xl lg:text-3xl text-orange-800 font-bold uppercase">
+              <div className="font-elite text-xl sm:text-2xl md:text-2xl lg:text-3xl text-orange-800 font-bold uppercase">
                 <p> web developer!</p>
               </div>
             </div>
-            <div className="font-elite text-lg sm:text-xl md:text-2xl lg:text-3xl text-left text-gray-800 font-bold uppercase">
+            <div className="font-elite text-xl sm:text-2xl md:text-2xl lg:text-3xl text-left text-gray-800 font-bold uppercase">
               <Typewriter
                 options={{
                   strings: [texts[currentIndex]],
@@ -49,8 +49,8 @@ function Hero() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center xs:w-3/4 sm:w-3/5 md:w-3/5 lg:w-2/5 md:pt-6">
-          <img src={images[currentIndex]} alt="what I like" className="h-100" />
+        <div className="flex justify-center xs:w-3/4 sm:w-3/5 md:w-1/2 xl:w-5/12 xxl:w-full md:pt-6">
+          <img src={images[currentIndex]} alt="what I like" />
         </div>
       </div>
       <div>

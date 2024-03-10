@@ -10,15 +10,15 @@ function ScrollDown() {
     setIsVisible(shouldBeVisible);
   };
 
-const handleClickScroll = () => {
-  const isMobile = window.innerWidth <= 768;
-  const elementId = isMobile ? 'resume' : 'contact';
-  const element = document.getElementById(elementId);
+  const handleClickScroll = () => {
+    const isMobile = window.innerWidth <= 768;
+    const elementId = isMobile ? 'resume' : 'about-me';
+    const element = document.getElementById(elementId);
 
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
-};
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -32,7 +32,7 @@ const handleClickScroll = () => {
       <img
         src={scrollDown}
         alt="scroll down icon"
-        className={`animate-bounce h-12 w-12 my-6 ${isVisible ? 'visible' : 'hidden'} 2xl:hidden cursor-pointer`}
+        className={`animate-bounce h-12 w-12 my-6 ${isVisible ? 'visible' : 'hidden'} cursor-pointer`}
         onClick={handleClickScroll}
       />
     </div>
