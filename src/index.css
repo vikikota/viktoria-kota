@@ -1,7 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Reenie+Beanie&family=Sanchez:ital@0;1&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Unica+One&display=swap');
 
 @font-face {
   font-family: Akbar;

@@ -5,10 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        reenie: ['Reenie Beanie', 'system-ui'],
-        sanchez: ['Sanchez', 'system-ui'],
         elite: ['Special Elite', 'system-ui'],
-        osvald: ['Osvald', 'system-ui'],
+        unica: ['Unica One', 'system-ui'],
       },
       backgroundImage: {
         craft: "url('/src/assets/craft.webp')",

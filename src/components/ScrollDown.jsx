@@ -10,12 +10,15 @@ function ScrollDown() {
     setIsVisible(shouldBeVisible);
   };
 
-  const handleClickScroll = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+const handleClickScroll = () => {
+  const isMobile = window.innerWidth <= 768;
+  const elementId = isMobile ? 'resume' : 'contact';
+  const element = document.getElementById(elementId);
+
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
