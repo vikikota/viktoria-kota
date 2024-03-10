@@ -14,7 +14,7 @@ function AboutMeShort() {
               The magic of programming has completely captivated me and has become a part of my life.
             </p>
             <p>
-              Previously, I primarily worked with graphics, for which I'm grateful as it complements frontend
+              Previously, I primarily worked with graphics, for which I am grateful as it complements frontend
               development in a useful way
             </p>
           </div>
