@@ -6,7 +6,7 @@ function ScrollDown() {
 
   const handleScroll = () => {
     const { scrollY } = window;
-    const shouldBeVisible = scrollY + 10 <= 25;
+    const shouldBeVisible = scrollY + 10 <= 60;
     setIsVisible(shouldBeVisible);
   };
 

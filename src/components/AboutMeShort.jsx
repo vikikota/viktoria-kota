@@ -3,9 +3,9 @@ import profile from '../assets/profile_bw.png';
 function AboutMeShort() {
   return (
     <div className="bg-black bg-opacity-80 shadow-md">
-      <div className="container flex flex-col md:flex-row items-end md:items-center justify-around max-w-[1200px] md:w-4/5 mx-auto md:space-x-4 mt-8 md:mt-0 lg:mt-4 xl:mt-24 py-8">
+      <div className="container flex flex-col md:flex-row items-end md:items-center justify-around max-w-[1200px] md:w-4/5 mx-auto md:space-x-6 mt-8 md:mt-0 lg:mt-4 xl:mt-24 py-8">
         <div className="flex flex-row items-center space-x-4">
-          <div className="min-w-20 max-w-24">
+          <div className="min-w-20 max-w-28">
             <img src={profile} alt="profile" className="" />
           </div>
           <div className="font-unica text-sm xs:text-xl text-justify md:text-xl text-gray-200">

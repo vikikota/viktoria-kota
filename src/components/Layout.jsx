@@ -1,5 +1,5 @@
-import { NavLink, Outlet } from 'react-router-dom';
-import { useState } from 'react';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import MenuOpen from '../assets/menu-open.svg';
 import MenuClose from '../assets/menu-close.svg';
 import Home from '../assets/home-icon.svg';
@@ -10,18 +10,35 @@ import GithubLogo from '../assets/github-logo.png';
 import GithubLogoHover from '../assets/github-logo-hover.png';
 import LinkedinLogo from '../assets/linkedin-logo.png';
 import LinkedinLogoHover from '../assets/linkedin-logo-hover.png';
+import Logo from '../assets/viktoria-kota.svg';
 import Contact from './Contact';
 import ResumeDownload from './ResumeDownload';
+import Stack from './Stack';
 import AboutMeShort from './AboutMeShort';
 import ScrollDown from './ScrollDown';
 
 function Layout() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAboutMe, setIsAboutMe] = useState(false);
+  const location = useLocation();
 
-  const handleClickScroll = () => {
-    const element = document.querySelector('#contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  useEffect(() => {
+    const handleAboutPathChange = async () => {
+      const isAbout = location.pathname.includes('about');
+      setIsAboutMe(isAbout);
+    };
+
+    handleAboutPathChange();
+  }, [location]);
+
+  const handleClickScroll = (id) => {
+    const skillsElement = document.querySelector('#skills');
+    const contactElement = document.querySelector('#contact');
+
+    if (id === 'skills') {
+      skillsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (id === 'contact') {
+      contactElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -33,8 +50,12 @@ function Layout() {
     <div className="bg-craft flex flex-col bg-bottom">
       <div className="container mx-auto flex flex-col justify-between max-w-[1200px] md:w-4/5 h-dvh">
         <header className="flex flex-col md:items-center pt-6 md:pt-8">
-          <div className="flex flex-row justify-between items-center md:justify-center relative h-8">
-            <div className="font-unica font-bold text-gray-700 text-2xl ">Viktória Kóta</div>
+          <div className="flex flex-row justify-between items-center md:justify-center relative h-12">
+            <NavLink to="/" href="#home" onClick={() => setIsAboutMe(false)}>
+              <div className="font-unica font-bold text-gray-700 text-2xl">
+                <img src={Logo} alt="logo" className="h-10 md:h-12" />
+              </div>
+            </NavLink>
             <div onClick={handleMenuToggle} className="md:hidden cursor-pointer" role="button" tabIndex={0}>
               <img
                 src={MenuOpen}
@@ -60,7 +81,7 @@ function Layout() {
               to="/"
               href="#home"
               onClick={isOpen ? handleMenuToggle : ''}
-              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-gray-800"
+              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
               <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="home icon" />
               <p className="text-xl md:text-2xl">Home</p>
@@ -69,7 +90,7 @@ function Layout() {
               to="/about"
               href="#about"
               onClick={isOpen ? handleMenuToggle : ''}
-              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-gray-800"
+              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
               <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="about icon" />
               <p className="text-xl md:text-2xl">Me</p>
@@ -77,17 +98,24 @@ function Layout() {
             <NavLink
               to="/about"
               href="#about"
-              onClick={isOpen ? handleMenuToggle : ''}
-              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-gray-800"
+              onClick={
+                isOpen
+                  ? () => {
+                      handleClickScroll('skills');
+                      handleMenuToggle();
+                    }
+                  : () => handleClickScroll('skills')
+              }
+              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
               <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="skills icon" />
               <p className="text-xl md:text-2xl">Skills</p>
             </NavLink>
             <NavLink
-              to="/works"
-              href="#works"
+              to="/about"
+              href="#about"
               onClick={isOpen ? handleMenuToggle : ''}
-              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-gray-800"
+              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
               <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="skills icon" />
               <p className="text-xl md:text-2xl">Works</p>
@@ -96,12 +124,12 @@ function Layout() {
               onClick={
                 isOpen
                   ? () => {
-                      handleClickScroll();
                       handleMenuToggle();
+                      handleClickScroll('contact');
                     }
-                  : handleClickScroll
+                  : () => handleClickScroll('contact')
               }
-              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-0 hover:scale-110 text-gray-700 hover:text-gray-800"
+              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-0 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
               <img src={contact} className={`${isOpen ? 'h-8 w-10 block' : 'hidden'}`} alt="contact icon" />
               <p className="text-xl md:text-2xl">Contact</p>
@@ -117,9 +145,16 @@ function Layout() {
       <div id="resume" className="flex md:hidden w-4/5 mx-auto">
         <ResumeDownload />
       </div>
-      <div id="about-me">
-        <AboutMeShort className=" w-4/5 mx-auto" />
-      </div>
+      {!isAboutMe && (
+        <div id="about-me">
+          <AboutMeShort className=" w-4/5 mx-auto" />
+        </div>
+      )}
+      {isAboutMe && (
+        <div id="skills">
+          <Stack className="w-4/5 mx-auto" />
+        </div>
+      )}
       <div id="contact">
         <Contact />
       </div>

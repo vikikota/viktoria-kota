@@ -39,3 +39,19 @@ select:-webkit-autofill:focus {
   transition: white 5000s ease-in-out 0s;
   color: white;
 }
+
+@keyframes leftRight {
+  0%,
+  100% {
+    transform: translateX(-10%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.left-right {
+  animation: leftRight 1s infinite;
+}
