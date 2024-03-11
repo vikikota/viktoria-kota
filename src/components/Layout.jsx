@@ -32,13 +32,17 @@ function Layout() {
   }, [location]);
 
   const handleClickScroll = (id) => {
+
     const skillsElement = document.querySelector('#skills');
     const contactElement = document.querySelector('#contact');
+    const aboutElement = document.querySelector('#about-me');
 
     if (id === 'skills') {
       skillsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else if (id === 'contact') {
       contactElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (id === 'about-me') {
+      aboutElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -89,7 +93,14 @@ function Layout() {
             <NavLink
               to="/about"
               href="#about"
-              onClick={isOpen ? handleMenuToggle : ''}
+              onClick={
+                isOpen
+                  ? () => {
+                      handleClickScroll('about-me');
+                      handleMenuToggle();
+                    }
+                  : () => handleClickScroll('about-me')
+              }
               className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
               <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="about icon" />
@@ -146,8 +157,8 @@ function Layout() {
         <ResumeDownload />
       </div>
       {!isAboutMe && (
-        <div id="about-me">
-          <AboutMeShort className=" w-4/5 mx-auto" />
+        <div>
+          <AboutMeShort handleClickScroll={handleClickScroll} className=" w-4/5 mx-auto" />
         </div>
       )}
       {isAboutMe && (

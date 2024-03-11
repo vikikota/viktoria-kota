@@ -66,7 +66,7 @@ function Contact() {
                 disabled={emailSent}
                 value={formData.name}
                 onChange={handleChange}
-                className="p-2 border-b-2 hover:!border-b-4 border-orange-700 focus:rounded-none focus:border-orange-700 focus:border-b-4 focus:outline-none
+                className="p-2 border-b-2 hover:bg-neutral-50 border-orange-700 focus:rounded-none focus:border-orange-700 focus:border-b-4 focus:outline-none
  placeholder:text-slate-400 text-sm shadow-sm focus:shadow-md"
               />
             </div>
@@ -82,7 +82,7 @@ function Contact() {
                 disabled={emailSent}
                 value={formData.email}
                 onChange={handleChange}
-                className="p-2 border-b-2 hover:!border-b-4 border-orange-700 focus:border-orange-700 focus:border-b-4 focus:outline-none
+                className="p-2 border-b-2 hover:bg-neutral-50 border-orange-700 focus:border-orange-700 focus:border-b-4 focus:outline-none
  placeholder:text-slate-400 text-sm shadow-md focus:shadow-md  autofill:!bg-white"
               />
             </div>
@@ -98,7 +98,7 @@ function Contact() {
                 disabled={emailSent}
                 value={formData.about}
                 onChange={handleChange}
-                className="p-2 border-b-2 hover:!border-b-4 border-orange-700 focus:rounded-none focus:border-orange-700 focus:border-b-4 focus:outline-none
+                className="p-2 border-b-2 hover:bg-neutral-50 border-orange-700 focus:rounded-none focus:border-orange-700 focus:border-b-4 focus:outline-none
  placeholder:text-slate-400 text-sm shadow-sm focus:shadow-md leading-6"
               />
             </div>
