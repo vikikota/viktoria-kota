@@ -3,14 +3,17 @@ import { useEffect, useState } from 'react';
 import MenuOpen from '../assets/menu-open.svg';
 import MenuClose from '../assets/menu-close.svg';
 import Home from '../assets/home-icon.svg';
+import Me from '../assets/me-icon.svg';
+import Skills from '../assets/skills-icon.svg';
+import Works from '../assets/works-icon.svg';
+import ContactIcon from '../assets/contact-icon.svg';
+import Logo from '../assets/viktoria-kota.svg';
 import FBLogo from '../assets/facebook-logo.png';
-import contact from '../assets/contact-icon.svg';
 import FBLogoHover from '../assets/facebook-logo-hover.png';
 import GithubLogo from '../assets/github-logo.png';
 import GithubLogoHover from '../assets/github-logo-hover.png';
 import LinkedinLogo from '../assets/linkedin-logo.png';
 import LinkedinLogoHover from '../assets/linkedin-logo-hover.png';
-import Logo from '../assets/viktoria-kota.svg';
 import Contact from './Contact';
 import ResumeDownload from './ResumeDownload';
 import Stack from './Stack';
@@ -32,18 +35,12 @@ function Layout() {
   }, [location]);
 
   const handleClickScroll = (id) => {
-
-    const skillsElement = document.querySelector('#skills');
-    const contactElement = document.querySelector('#contact');
-    const aboutElement = document.querySelector('#about-me');
-
-    if (id === 'skills') {
-      skillsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else if (id === 'contact') {
-      contactElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else if (id === 'about-me') {
-      aboutElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    setTimeout(() => {
+      const scrollElement = document.querySelector(`#${id}`);
+      if (scrollElement) {
+        scrollElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 300);
   };
 
   const handleMenuToggle = () => {
@@ -52,11 +49,11 @@ function Layout() {
 
   return (
     <div className="bg-craft flex flex-col bg-bottom">
-      <div className="container mx-auto flex flex-col justify-between max-w-[1200px] md:w-4/5 h-dvh">
+      <div className="container mx-auto flex flex-col justify-between max-w-[1200px] lg:w-4/5 min-h-dvh">
         <header className="flex flex-col md:items-center pt-6 md:pt-8">
           <div className="flex flex-row justify-between items-center md:justify-center relative h-12">
             <NavLink to="/" href="#home" onClick={() => setIsAboutMe(false)}>
-              <div className="font-unica font-bold text-gray-700 text-2xl">
+              <div>
                 <img src={Logo} alt="logo" className="h-10 md:h-12" />
               </div>
             </NavLink>
@@ -69,7 +66,7 @@ function Layout() {
             </div>
           </div>
           <nav
-            className={`absolute top-0 right-0 text-right md:relative md:flex md:w-auto font-unica font-bold ${isOpen ? 'block bg-white bg-opacity-80 min-h-screen py-4 px-4 w-1/10 shadow-lg' : 'hidden'}`}
+            className={` top-0 right-0 text-right md:relative md:flex md:w-auto font-unica  ${isOpen ? 'block bg-gray-800 bg-opacity-80 min-h-screen py-4 px-4 w-1/10 shadow-lg fixed' : 'hidden'}`}
           >
             <div className="md:hidden flex justify-center">
               <div
@@ -85,10 +82,12 @@ function Layout() {
               to="/"
               href="#home"
               onClick={isOpen ? handleMenuToggle : ''}
-              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-gray-900"
+              className="flex flex-col items-center md:inline-block mt-8 md:mt-0 md:me-10 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
-              <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="home icon" />
-              <p className="text-xl md:text-2xl">Home</p>
+              <img src={Home} className={`${isOpen ? 'w-14 block' : 'hidden'}`} alt="home icon" />
+              <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
+                Home
+              </p>
             </NavLink>
             <NavLink
               to="/about"
@@ -101,10 +100,12 @@ function Layout() {
                     }
                   : () => handleClickScroll('about-me')
               }
-              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-gray-900"
+              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
-              <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="about icon" />
-              <p className="text-xl md:text-2xl">Me</p>
+              <img src={Me} className={`${isOpen ? 'w-14 block' : 'hidden'}`} alt="about icon" />
+              <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
+                Me
+              </p>
             </NavLink>
             <NavLink
               to="/about"
@@ -117,19 +118,30 @@ function Layout() {
                     }
                   : () => handleClickScroll('skills')
               }
-              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-gray-900"
+              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
-              <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="skills icon" />
-              <p className="text-xl md:text-2xl">Skills</p>
+              <img src={Skills} className={`${isOpen ? 'w-10 block' : 'hidden'}`} alt="skills icon" />
+              <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
+                Skills
+              </p>
             </NavLink>
             <NavLink
               to="/about"
               href="#about"
-              onClick={isOpen ? handleMenuToggle : ''}
-              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-7 hover:scale-110 text-gray-700 hover:text-gray-900"
+              onClick={
+                isOpen
+                  ? () => {
+                      handleClickScroll('works');
+                      handleMenuToggle();
+                    }
+                  : () => handleClickScroll('works')
+              }
+              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
-              <img src={Home} className={`${isOpen ? 'h-5 w-10 block' : 'hidden'}`} alt="skills icon" />
-              <p className="text-xl md:text-2xl">Works</p>
+              <img src={Works} className={`${isOpen ? 'w-12 block' : 'hidden'}`} alt="skills icon" />
+              <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
+                Works
+              </p>
             </NavLink>
             <NavLink
               onClick={
@@ -140,10 +152,12 @@ function Layout() {
                     }
                   : () => handleClickScroll('contact')
               }
-              className="flex flex-col items-center md:inline-block mt-5 md:mt-0 md:mr-0 hover:scale-110 text-gray-700 hover:text-gray-900"
+              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:mr-0 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
-              <img src={contact} className={`${isOpen ? 'h-8 w-10 block' : 'hidden'}`} alt="contact icon" />
-              <p className="text-xl md:text-2xl">Contact</p>
+              <img src={ContactIcon} className={`${isOpen ? 'w-11 block' : 'hidden'}`} alt="contact icon" />
+              <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
+                Contact
+              </p>
             </NavLink>
           </nav>
         </header>
@@ -157,7 +171,7 @@ function Layout() {
         <ResumeDownload />
       </div>
       {!isAboutMe && (
-        <div>
+        <div id="about-short">
           <AboutMeShort handleClickScroll={handleClickScroll} className=" w-4/5 mx-auto" />
         </div>
       )}

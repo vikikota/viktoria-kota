@@ -12,12 +12,15 @@ function ScrollDown() {
 
   const handleClickScroll = () => {
     const isMobile = window.innerWidth <= 768;
-    const elementId = isMobile ? 'resume' : 'about-me';
-    const element = document.getElementById(elementId);
+    const id = isMobile ? 'resume' : 'about-short';
 
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    setTimeout(() => {
+      const scrollElement = document.querySelector(`#${id}`);
+
+      if (scrollElement) {
+        scrollElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 300);
   };
 
   useEffect(() => {
@@ -33,7 +36,7 @@ function ScrollDown() {
         src={scrollDown}
         alt="scroll down icon"
         className={`animate-bounce h-12 w-12 my-6 ${isVisible ? 'visible' : 'hidden'} cursor-pointer`}
-        onClick={handleClickScroll}
+        onClick={() => handleClickScroll('contact')}
       />
     </div>
   );

@@ -37,7 +37,7 @@ function AboutMeShort({ handleClickScroll }) {
 }
 
 AboutMeShort.propTypes = {
-  handleClickScroll:  PropTypes.func.isRequired,
-}
+  handleClickScroll: PropTypes.func.isRequired,
+};
 
 export default AboutMeShort;
