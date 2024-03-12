@@ -18,7 +18,7 @@ import lightburn from '../assets/stack/lightburn.svg';
 function Stack() {
   return (
     <div id="stack">
-      <div className=" bg-black bg-opacity-80 shadow-md py-5">
+      <div className="select-none bg-black bg-opacity-80 shadow-md py-5">
         <div className="container flex flex-col md:items-center justify-center mx-auto md:w-4/5">
           <div>
             <p className="font-elite text-center text-xl xs:text-2xl text-gray-200 py-2">MY STACK</p>

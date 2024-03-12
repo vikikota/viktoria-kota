@@ -185,7 +185,7 @@ function Layout() {
       </div>
       <footer className="container mx-auto py-4">
         <div className="flex flex-col items-center md:items-stretch">
-          <div className="text-gray-800 md:text-md font-unica font-bold">Yeees, it is still me :)</div>
+          <div className="text-gray-800 md:text-md font-unica font-bold uppercase">Yeees, it is still me :)</div>
           <div className="flex flex-col md:flex-row md:justify-between items-center">
             <div className="flex mt-3 space-x-4 md:space-x-5">
               <a

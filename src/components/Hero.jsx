@@ -22,12 +22,12 @@ function Hero() {
   return (
     <div>
       <div className="flex flex-col sm:flex-row justify-between items-center max-w-[1200px]">
-        <div className="flex flex-col items-center sm:items-start w-full sm:w-2/5 md:w-2/5 xl:w-1/3 2xl:w-2/5 my-4">
+        <div className="flex flex-col items-center sm:items-start w-3/5 sm:w-2/5 md:w-2/5 xl:w-1/3 2xl:w-2/5 my-4">
           <div className="py-4 md:ps-12">
             <div className="font-elite text-xl sm:text-2xl md:text-2xl lg:text-3xl text-orange-800 font-bold uppercase">
               Oh hi!
             </div>
-            <div className="flex flex-row sm:flex-col">
+            <div className="flex flex-col">
               <div className="font-elite text-xl sm:text-2xl md:text-2xl lg:text-3xl text-orange-800 font-bold uppercase">
                 <p> I am a junior&nbsp;</p>
               </div>

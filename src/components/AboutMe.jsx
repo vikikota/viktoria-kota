@@ -2,8 +2,8 @@ import profile from '../assets/profile_bw.png';
 
 function AboutMe() {
   return (
-    <div className="container flex flex-col md:flex-row justify-start md:justify-center items-center row:items-start md:mt-10 pb-4">
-      <div className="font-unica font-semibold uppercase text-gray-800 text-md md:text-lg text-justify leading-5">
+    <div className="container select-none flex flex-col md:flex-row justify-start md:justify-center items-center row:items-start md:mt-10 pb-4 mx-auto">
+      <div className="select-none font-unica font-semibold uppercase text-gray-800 text-md md:text-lg text-justify leading-5">
         <div className="flex justify-center sm:inline-block sm:float-left">
           <img src={profile} alt="profile" className="w-40 md:w-52 mt-8 md:mt-0 mb-4 md:mb-0 md:me-2" />
         </div>
