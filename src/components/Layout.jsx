@@ -49,8 +49,8 @@ function Layout() {
 
   return (
     <div className="bg-craft flex flex-col bg-bottom">
-      <div className="container mx-auto flex flex-col justify-between max-w-[1200px] lg:w-4/5 min-h-dvh">
-        <header className="flex flex-col md:items-center pt-6 md:pt-8">
+      <div className="mx-auto flex flex-col justify-between max-w-[1000px] xl:max-w-[1200px] 2xl:max-w-[1400px] lg:w-4/5 min-h-dvh">
+        <header className="container flex flex-col md:items-center pt-6 md:pt-8">
           <div className="flex flex-row justify-between items-center md:justify-center relative h-12">
             <NavLink to="/" href="#home" onClick={() => setIsAboutMe(false)}>
               <div>
@@ -162,12 +162,12 @@ function Layout() {
           </nav>
         </header>
         <Outlet />
-        <div id="resume2" className="hidden md:flex">
+        <div id="resume2" className="hidden my-4 md:flex">
           <ResumeDownload />
         </div>
         <ScrollDown />
       </div>
-      <div id="resume" className="flex md:hidden w-4/5 mx-auto">
+      <div id="resume" className="flex md:hidden my-6 w-4/5 mx-auto">
         <ResumeDownload />
       </div>
       {!isAboutMe && (

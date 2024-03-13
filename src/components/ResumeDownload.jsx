@@ -3,7 +3,7 @@ import resume from '../assets/Kóta Viktória CV 2024 02.pdf';
 
 function ResumeDownload() {
   return (
-    <div className="container flex flex-row justify-center items-center md:mt-10 pb-4 space-x-4">
+    <div className=" flex flex-row justify-center items-center space-x-4 mx-auto">
       <div className=" font-unica font-bold text-md xs:text-xl  text-gray-800 uppercase">download my cv</div>
       <div className="z-0">
         <img src={rightArrow} alt="right arrow" className="left-right w-9 md:w-12" />

@@ -5,7 +5,7 @@ import Works from '../components/Works';
 function About() {
   return (
     <div>
-      <div id="about-me" className="">
+      <div id="about-me">
         <AboutMe />
       </div>
       <div id="works" className="">

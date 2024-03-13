@@ -10,52 +10,82 @@ import github from '../assets/stack/github.svg';
 import jira from '../assets/stack/jira.svg';
 import bootstrap from '../assets/stack/bootstrap.svg';
 import agile from '../assets/stack/agile.svg';
+import tailwind from '../assets/stack/tailwind.svg';
+import hangman1 from '../assets/works/hangman_1.jpg';
+import hangman2 from '../assets/works/hangman_2.jpg';
+import club1 from '../assets/works/club_1.jpg';
+import club2 from '../assets/works/club_2.jpg';
+import club3 from '../assets/works/club_3.jpg';
+import club4 from '../assets/works/club_4.jpg';
+import club5 from '../assets/works/club_5.jpg';
+import rpsls1 from '../assets/works/rpsls_1.jpg';
+import rpsls2 from '../assets/works/rpsls_2.jpg';
+import portfolio1 from '../assets/works/portfolio_1.jpg';
+import portfolio2 from '../assets/works/portfolio_2.jpg';
+import portfolio3 from '../assets/works/portfolio_3.jpg';
 
 function Works() {
   const data = [
     {
-      id: 0,
-      images: [
-        'https://media.geeksforgeeks.org/wp-content/uploads/20240215121528/javare15.png',
-        'https://media.geeksforgeeks.org/wp-content/uploads/20240215121204/15re.webp',
-        'https://media.geeksforgeeks.org/wp-content/uploads/20240215121356/jsre15.jpg',
-      ],
-      title: 'Rock, Paper, Scissors, Lizard, Spock',
-      description:
-        'As part of my studies, I had the incredible opportunity to participate in a group project where we developed a website for an American-style country club. Working within the Scrum framework, with all its ceremonies, was an enlightening experience.',
-      stack: [html, css, js],
-    },
-    {
       id: 1,
-      images: [
-        'https://media.geeksforgeeks.org/wp-content/uploads/20240215121528/javare15.png',
-        'https://media.geeksforgeeks.org/wp-content/uploads/20240215121204/15re.webp',
-        'https://media.geeksforgeeks.org/wp-content/uploads/20240215121356/jsre15.jpg',
-      ],
-      title: 'The Door Club project',
-      description:
-        'As part of my studies, I had the incredible opportunity to participate in a group project where we developed a website for an American-style country club. Working within the Scrum framework, with all its ceremonies, was an enlightening experience.',
-      stack: [bootstrap, react, postgresql, node, github, jira, agile],
-    },
-    {
-      id: 2,
-      images: [
-        'https://media.geeksforgeeks.org/wp-content/uploads/20240215121528/javare15.png',
-        'https://media.geeksforgeeks.org/wp-content/uploads/20240215121204/15re.webp',
-        'https://media.geeksforgeeks.org/wp-content/uploads/20240215121356/jsre15.jpg',
-      ],
+      images: [club1, club3, club2, club4, club5],
       title: 'The Door Club project',
       description:
         'As part of my studies, I had the incredible opportunity to participate in a group project where we developed a website for an American-style country club. Working within the Scrum framework, with all its ceremonies.',
-      stack: [bootstrap, react, postgresql, node, github, jira, agile],
+      buttonText: 'CHECK THE CODE',
+      buttonURL: 'https://github.com/vikikota/club-project',
+      stack: [bootstrap, react, postgresql, node, jira, agile],
+    },
+    {
+      id: 2,
+      images: [rpsls1, rpsls2],
+      title: 'Rock, Paper, Scissors, Lizard, Spock',
+      description: (
+        <div>
+          This was my very first project. <br />
+          I used Vanilla JS, CSS and HTML. <br />
+          The responsiveness isn&apos;t quite there yet 🙄
+        </div>
+      ),
+      buttonText: 'TRY IT',
+      buttonURL: 'https://vikikota.github.io/rock-paper-scissors-lizard-spock/',
+      stack: [html, css, js],
+    },
+
+    {
+      id: 3,
+      images: [hangman1, hangman2],
+      title: 'Hangman',
+      description:
+        'As part of my studies, I had the incredible opportunity to participate in a group project where we developed a website for an American-style country club. Working within the Scrum framework, with all its ceremonies.',
+      buttonText: 'TRY IT',
+      buttonURL: 'https://vikikota.github.io/hangman/',
+      stack: [html, css, js],
+    },
+    {
+      id: 4,
+      images: [portfolio1, portfolio2, portfolio3],
+      title: 'Own portfolio website',
+      description:
+        'As part of my studies, I had the incredible opportunity to participate in a group project where we developed a website for an American-style country club. Working within the Scrum framework, with all its ceremonies.',
+      buttonText: 'YOU ARE HERE NOW',
+      buttonURL: 'https://vikikota.github.io/hello/',
+      stack: [tailwind, react, github],
     },
   ];
 
   return (
-    <div className="container flex flex-col flex-wrap md:flex-row justify-start md:justify-center items-center row:items-start lg:mt-10 pb-4 mx-auto relative">
-      {data.map((item) => (
-        <WorkCard key={uuidv4()} {...item} />
-      ))}
+    <div className="mt-4">
+      <div className="flex justify-center">
+        <p className="font-elite font-bold text-xl xs:text-2xl text-gray-800 border-2 border-gray-800 rounded-sm px-4 pt-2 shadow-sm">
+          WORKS
+        </p>
+      </div>
+      <div className="container flex flex-wrap flex-row justify-center items-center md:items-start lg:mt-10 mx-auto relative">
+        {data.map((item) => (
+          <WorkCard key={uuidv4()} {...item} />
+        ))}
+      </div>
     </div>
   );
 }
