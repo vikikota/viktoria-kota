@@ -28,7 +28,7 @@ function WorkCard({ images, title, description, buttonText, buttonURL, stack }) 
 
   return (
     <div className="select-none overflow-hidden transition shadow-lg flex flex-col m-2 min-w-[150px] max-w-[300px]">
-      <div className="flex relative font-semibold text-md md:text-lg text-justify leading-5">
+      <div className="flex relative font-semibold text-md md:text-lg text-justify leading-5 hover:scale-102">
         <img
           src={images[currentImageIndex]}
           className="object-cover"
@@ -48,7 +48,12 @@ function WorkCard({ images, title, description, buttonText, buttonURL, stack }) 
         <div className="absolute top-1/2 right-4" onClick={showNextImage} role="button" tabIndex={0}>
           <img src={rightArrow} className="w-5 hover:scale-110 cursor-pointer" alt="right arrow icon" />
         </div>
-        <div className="absolute bg-white bg-opacity-45 rounded-sm p-1 bottom-2 right-2 flex items-center">
+        <div
+          onClick={() => showModal(currentImageIndex)}
+          className="absolute bg-white bg-opacity-45 rounded-sm p-1 bottom-2 right-2 flex items-center"
+          role="button"
+          tabIndex={0}
+        >
           <span className="p-1">{images.length}</span>
           <img src={multipleImages} alt="multiple images icon" className="h-8" />
         </div>

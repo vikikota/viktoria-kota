@@ -10,11 +10,14 @@ export default {
       },
       backgroundImage: {
         craft: "url('/src/assets/craft.webp')",
+        paper: "url('/src/assets/torn-paper.png')",
+        paperw: "url('/src/assets/torn-paper-wide.png')",
       },
       container: {
         padding: '7%',
       },
       scale: {
+        102: '1.02',
         110: '1.1',
       },
       screens: {

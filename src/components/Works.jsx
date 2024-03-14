@@ -28,60 +28,54 @@ function Works() {
   const data = [
     {
       id: 1,
+      images: [portfolio1, portfolio2, portfolio3],
+      title: 'Own portfolio website',
+      description:
+        'Expanding my skills, I dedicated my personal portfolio website to learning Tailwind, emphasizing my commitment to user-friendly UX design.',
+      buttonText: 'YOU ARE HERE NOW',
+      buttonURL: 'https://vikikota.github.io/hello/',
+      stack: [tailwind, react, github],
+    },
+    {
+      id: 2,
       images: [club1, club3, club2, club4, club5],
       title: 'The Door Club project',
       description:
-        'As part of my studies, I had the incredible opportunity to participate in a group project where we developed a website for an American-style country club. Working within the Scrum framework, with all its ceremonies.',
+        'I collaborated within a Scrum team to develop a website for an American-style country club. The website allows users to book services, supported by a backend database, and features an admin interface for staff members.',
       buttonText: 'CHECK THE CODE',
       buttonURL: 'https://github.com/vikikota/club-project',
       stack: [bootstrap, react, postgresql, node, jira, agile],
     },
     {
-      id: 2,
-      images: [rpsls1, rpsls2],
-      title: 'Rock, Paper, Scissors, Lizard, Spock',
-      description: (
-        <div>
-          This was my very first project. <br />
-          I used Vanilla JS, CSS and HTML. <br />
-          The responsiveness isn&apos;t quite there yet 🙄
-        </div>
-      ),
-      buttonText: 'TRY IT',
-      buttonURL: 'https://vikikota.github.io/rock-paper-scissors-lizard-spock/',
-      stack: [html, css, js],
-    },
-
-    {
       id: 3,
       images: [hangman1, hangman2],
       title: 'Hangman',
       description:
-        'As part of my studies, I had the incredible opportunity to participate in a group project where we developed a website for an American-style country club. Working within the Scrum framework, with all its ceremonies.',
+        'As part of a mini-team project, I practiced advanced JavaScript functions and DOM manipulation through the development of the game.',
       buttonText: 'TRY IT',
       buttonURL: 'https://vikikota.github.io/hangman/',
       stack: [html, css, js],
     },
     {
       id: 4,
-      images: [portfolio1, portfolio2, portfolio3],
-      title: 'Own portfolio website',
+      images: [rpsls1, rpsls2],
+      title: 'Rock, Paper, Scissors, Lizard, Spock',
       description:
-        'As part of my studies, I had the incredible opportunity to participate in a group project where we developed a website for an American-style country club. Working within the Scrum framework, with all its ceremonies.',
-      buttonText: 'YOU ARE HERE NOW',
-      buttonURL: 'https://vikikota.github.io/hello/',
-      stack: [tailwind, react, github],
+        'This was my very first project. I used Vanilla JS, CSS, and HTML. The responsiveness isn not quite there yet 🙂',
+      buttonText: 'TRY IT',
+      buttonURL: 'https://vikikota.github.io/rock-paper-scissors-lizard-spock/',
+      stack: [html, css, js],
     },
   ];
 
   return (
-    <div className="mt-4">
+    <div>
       <div className="flex justify-center">
         <p className="font-elite font-bold text-xl xs:text-2xl text-gray-800 border-2 border-gray-800 rounded-sm px-4 pt-2 shadow-sm">
           WORKS
         </p>
       </div>
-      <div className="container flex flex-wrap flex-row justify-center items-center md:items-start lg:mt-10 mx-auto relative">
+      <div className="container flex flex-wrap flex-row justify-center items-center md:items-start lg:mt-6 mx-auto relative">
         {data.map((item) => (
           <WorkCard key={uuidv4()} {...item} />
         ))}

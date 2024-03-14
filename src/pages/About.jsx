@@ -8,7 +8,7 @@ function About() {
       <div id="about-me">
         <AboutMe />
       </div>
-      <div id="works" className="">
+      <div id="works" className="mt-12 md:mt-16">
         <Works />
       </div>
       <ScrollDownButton />

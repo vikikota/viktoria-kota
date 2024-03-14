@@ -14,11 +14,15 @@ import GithubLogo from '../assets/github-logo.png';
 import GithubLogoHover from '../assets/github-logo-hover.png';
 import LinkedinLogo from '../assets/linkedin-logo.png';
 import LinkedinLogoHover from '../assets/linkedin-logo-hover.png';
+import cvLogo from '../assets/cv-icon.png';
+import cvLogoHover from '../assets/cv-icon-hover.png';
 import Contact from './Contact';
 import ResumeDownload from './ResumeDownload';
 import Stack from './Stack';
 import AboutMeShort from './AboutMeShort';
 import ScrollDown from './ScrollDown';
+import resume from '../assets/Kóta Viktória CV 2024 02.pdf';
+import Testimonial from './Testimonial';
 
 function Layout() {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,8 +88,8 @@ function Layout() {
               onClick={isOpen ? handleMenuToggle : ''}
               className="flex flex-col items-center md:inline-block mt-8 md:mt-0 md:me-10 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
-              <img src={Home} className={`${isOpen ? 'w-14 block' : 'hidden'}`} alt="home icon" />
-              <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
+              <img src={Home} className={`${isOpen ? 'w-12 block' : 'hidden'}`} alt="home icon" />
+              <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold cursor-pointer">
                 Home
               </p>
             </NavLink>
@@ -102,27 +106,9 @@ function Layout() {
               }
               className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
-              <img src={Me} className={`${isOpen ? 'w-14 block' : 'hidden'}`} alt="about icon" />
+              <img src={Me} className={`${isOpen ? 'w-12 block' : 'hidden'}`} alt="about icon" />
               <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
                 Me
-              </p>
-            </NavLink>
-            <NavLink
-              to="/about"
-              href="#about"
-              onClick={
-                isOpen
-                  ? () => {
-                      handleClickScroll('skills');
-                      handleMenuToggle();
-                    }
-                  : () => handleClickScroll('skills')
-              }
-              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-700 hover:text-gray-900"
-            >
-              <img src={Skills} className={`${isOpen ? 'w-10 block' : 'hidden'}`} alt="skills icon" />
-              <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
-                Skills
               </p>
             </NavLink>
             <NavLink
@@ -138,9 +124,27 @@ function Layout() {
               }
               className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
-              <img src={Works} className={`${isOpen ? 'w-12 block' : 'hidden'}`} alt="skills icon" />
+              <img src={Works} className={`${isOpen ? 'w-11 block' : 'hidden'}`} alt="skills icon" />
               <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
                 Works
+              </p>
+            </NavLink>
+            <NavLink
+              to="/about"
+              href="#about"
+              onClick={
+                isOpen
+                  ? () => {
+                      handleClickScroll('skills');
+                      handleMenuToggle();
+                    }
+                  : () => handleClickScroll('skills')
+              }
+              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-700 hover:text-gray-900"
+            >
+              <img src={Skills} className={`${isOpen ? 'w-9 block' : 'hidden'}`} alt="skills icon" />
+              <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
+                Skills
               </p>
             </NavLink>
             <NavLink
@@ -154,7 +158,7 @@ function Layout() {
               }
               className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:mr-0 hover:scale-110 text-gray-700 hover:text-gray-900"
             >
-              <img src={ContactIcon} className={`${isOpen ? 'w-11 block' : 'hidden'}`} alt="contact icon" />
+              <img src={ContactIcon} className={`${isOpen ? 'w-9 block' : 'hidden'}`} alt="contact icon" />
               <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
                 Contact
               </p>
@@ -180,6 +184,9 @@ function Layout() {
           <Stack className="w-4/5 mx-auto" />
         </div>
       )}
+      <div className="w-4/5 sm:my-6 mx-auto">
+        <Testimonial />
+      </div>
       <div id="contact">
         <Contact />
       </div>
@@ -187,7 +194,7 @@ function Layout() {
         <div className="flex flex-col items-center md:items-stretch">
           <div className="text-gray-800 md:text-md font-unica font-bold uppercase">Yeees, it is still me :)</div>
           <div className="flex flex-col md:flex-row md:justify-between items-center">
-            <div className="flex mt-3 space-x-4 md:space-x-5">
+            <div className="flex mt-3 space-x-4 md:space-x-4">
               <a
                 className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
                 href="https://facebook.com/Babszem/"
@@ -236,6 +243,16 @@ function Layout() {
                   alt="Linkedin logo hover"
                   className="w-9 absolute opacity-0 hover:opacity-100"
                 />
+              </a>
+              <a
+                className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
+                href={resume}
+                target="_blank"
+                aria-label="cv button"
+                rel="noreferrer"
+              >
+                <img src={cvLogo} alt="cv logo" className=" transition duration-300 transform w-9 hover:opacity-0" />
+                <img src={cvLogoHover} alt="cv logo hover" className="w-9 absolute opacity-0 hover:opacity-100" />
               </a>
             </div>
             <div className="mt-4 md:mt-0 text-center text-md font-unica text-gray-800">© 2024 Viktória Kóta</div>
