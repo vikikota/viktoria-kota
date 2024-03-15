@@ -184,7 +184,7 @@ function Layout() {
           <Stack className="w-4/5 mx-auto" />
         </div>
       )}
-      <div className="w-4/5 sm:my-6 mx-auto">
+      <div className="">
         <Testimonial />
       </div>
       <div id="contact">
