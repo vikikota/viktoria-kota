@@ -1,5 +1,5 @@
 import rightArrow from '../assets/right-arrow.svg';
-import resume from '../assets/Kóta Viktória CV 2024 02.pdf';
+import resume from '../assets/Kóta-Viktória-CV-EN.pdf';
 
 function ResumeDownload() {
   return (

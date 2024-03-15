@@ -37,7 +37,7 @@ function Testimonial() {
           </div>
           <div className="flex flex-col justify-center items-center basis-2/3 font-unica uppercase">
             <div className="bg-white bg-opacity-60 rounded-sm shadow-md p-2">
-              <p className="m-3 text-justify text-gray-800"> {testimonials[currentTestIndex].text}</p>
+              <p className="m-3 text-justify text-gray-800 md:text-lg"> {testimonials[currentTestIndex].text}</p>
             </div>
           </div>
           <div className="flex justify-center basis-1/12" onClick={showNextText} role="button" tabIndex={0}>

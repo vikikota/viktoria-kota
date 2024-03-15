@@ -4,7 +4,7 @@ import GithubLogoHover from '../assets/github-logo-hover.png';
 import LinkedinLogo from '../assets/linkedin-logo.png';
 import LinkedinLogoHover from '../assets/linkedin-logo-hover.png';
 import leftArrow from '../assets/left-arrow.svg';
-import resume from '../assets/Kóta Viktória CV 2024 02.pdf';
+import resume from '../assets/Kóta-Viktória-CV-EN.pdf';
 import cvLogo from '../assets/cv-icon.png';
 import cvLogoHover from '../assets/cv-icon-hover.png';
 

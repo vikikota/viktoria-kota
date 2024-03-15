@@ -21,7 +21,7 @@ import ResumeDownload from './ResumeDownload';
 import Stack from './Stack';
 import AboutMeShort from './AboutMeShort';
 import ScrollDown from './ScrollDown';
-import resume from '../assets/Kóta Viktória CV 2024 02.pdf';
+import resume from '../assets/Kóta-Viktória-CV-EN.pdf';
 import Testimonial from './Testimonial';
 
 function Layout() {
