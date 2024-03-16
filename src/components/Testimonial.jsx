@@ -13,7 +13,7 @@ function Testimonial() {
     },
     {
       id: 1,
-      text: `I got to know Viki as a very intelligent, diligent, helpful, and good-humored person. During the project work that concluded our training, we worked together in a group, and I believe that a significant part of the excellent final result achieved by our team was due to Viki's unwavering diligence and precision. She quickly felt at home with new technologies, and we could always turn to her with questions/requests; most of the time, it was under her leadership that we managed to overcome any difficulties. Through Viki's attitude towards work and her colleagues, she excels in any team.`,
+      text: `I got to know Viki as a very intelligent, diligent, helpful, and good-humored person. During the project work that concluded our training, we worked together in a group, and I believe that a significant part of the excellent final result achieved by our team was due to Viki's unwavering diligence and precision. She quickly felt at home with new technologies, and we could always turn to her with questions/requests. Through Viki's attitude towards work and her colleagues, she excels in any team.`,
       author: 'Gabriella Kovács',
       profession: 'Full Stack Developer',
     },
