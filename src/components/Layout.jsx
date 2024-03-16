@@ -255,7 +255,7 @@ function Layout() {
                 <img src={cvLogoHover} alt="cv logo hover" className="w-9 absolute opacity-0 hover:opacity-100" />
               </a>
             </div>
-            <div className="mt-4 md:mt-0 text-center text-md font-unica text-gray-800">© 2024 Viktória Kóta</div>
+            <div className="mt-4 md:mt-0 text-center text-md font-unica text-gray-800 uppercase">© 2024 Viktória Kóta</div>
           </div>
         </div>
       </footer>

@@ -29,7 +29,7 @@ function Works() {
     {
       id: 1,
       images: [portfolio1, portfolio2, portfolio3],
-      title: 'Own portfolio website',
+      title: 'My portfolio website',
       description:
         'Expanding my skills, I dedicated my personal portfolio website to learning Tailwind, emphasizing my commitment to user-friendly UX design.',
       buttonText: 'YOU ARE HERE NOW',

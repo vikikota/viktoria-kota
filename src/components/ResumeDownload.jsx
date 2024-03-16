@@ -16,7 +16,6 @@ function ResumeDownload() {
           aria-label="cv button"
           rel="noreferrer"
         >
-          {' '}
           HERE
         </a>
       </button>
