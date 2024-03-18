@@ -61,7 +61,7 @@ function Works() {
       images: [rpsls1, rpsls2],
       title: 'Rock, Paper, Scissors, Lizard, Spock',
       description:
-        'This was my very first project. I used Vanilla JS, CSS, and HTML. The responsiveness isn not quite there yet 🙂',
+        'This was my very first project. I used Vanilla JS, CSS, and HTML. The responsiveness is not quite there yet 🙂',
       buttonText: 'TRY IT',
       buttonURL: 'https://vikikota.github.io/rock-paper-scissors-lizard-spock/',
       stack: [html, css, js],

@@ -19,7 +19,7 @@ function Testimonial() {
     },
     {
       id: 2,
-      text: `Viki's diligence and attitude to work are extremely motivating. Precise and conscientious, he always moved towards solutions. He is a real team player who made the work even more colorful with his personality and good humor. He did not shy away from management, he was always honest and ready to share his opinion, which resulted in a successful project. I was very happy to be on a team with Viki, and I hope to have the opportunity to work with her in the future.`,
+      text: `Viki's diligence and attitude to work are extremely motivating. Precise and conscientious, she always moved towards solutions. She is a real team player who made the work even more colorful with his personality and good humor. She did not shy away from management, she was always honest and ready to share his opinion, which resulted in a successful project. I was very happy to be on a team with Viki, and I hope to have the opportunity to work with her in the future.`,
       author: 'Diana Dobozi',
       profession: 'Full Stack Developer',
     },
