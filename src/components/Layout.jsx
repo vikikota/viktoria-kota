@@ -7,15 +7,12 @@ import Me from '../assets/me-icon.svg';
 import Skills from '../assets/skills-icon.svg';
 import Works from '../assets/works-icon.svg';
 import ContactIcon from '../assets/contact-icon.svg';
-import Logo from '../assets/viktoria-kota.svg';
-import FBLogo from '../assets/facebook-logo.png';
+import Logo from '../assets/logo.png';
 import FBLogoHover from '../assets/facebook-logo-hover.png';
-import GithubLogo from '../assets/github-logo.png';
 import GithubLogoHover from '../assets/github-logo-hover.png';
-import LinkedinLogo from '../assets/linkedin-logo.png';
 import LinkedinLogoHover from '../assets/linkedin-logo-hover.png';
-import cvLogo from '../assets/cv-icon.png';
 import cvLogoHover from '../assets/cv-icon-hover.png';
+import stillMe from '../assets/still_me.png';
 import Contact from './Contact';
 import ResumeDownload from './ResumeDownload';
 import Stack from './Stack';
@@ -52,13 +49,13 @@ function Layout() {
   };
 
   return (
-    <div className="bg-craft flex flex-col bg-bottom">
-      <div className="mx-auto flex flex-col justify-between max-w-[1000px] xl:max-w-[1200px] 2xl:max-w-[1400px] lg:w-4/5 min-h-dvh">
-        <header className="container flex flex-col md:items-center pt-6 md:pt-8">
+    <div className="bg-craft flex flex-col bg-bottom bg-cover">
+      <div className="mx-auto flex flex-col items-center justify-between max-w-[1000px] xl:max-w-[1200px] 2xl:max-w-[1400px] lg:w-4/5 min-h-dvh">
+        <header className="container flex flex-col md:items-center pt-6 md:pt-10">
           <div className="flex flex-row justify-between items-center md:justify-center relative h-12">
             <NavLink to="/" href="#home" onClick={() => setIsAboutMe(false)}>
               <div>
-                <img src={Logo} alt="logo" className="h-10 md:h-12" />
+                <img src={Logo} alt="logo" className="h-9 md:h-12" />
               </div>
             </NavLink>
             <div onClick={handleMenuToggle} className="md:hidden cursor-pointer" role="button" tabIndex={0}>
@@ -190,9 +187,16 @@ function Layout() {
       <div id="contact">
         <Contact />
       </div>
-      <footer className="container mx-auto py-4">
+      <footer className="bg-orange-900 bg-opacity-25">
+      <div className='container max-w-[1400px] mx-auto py-4'>
         <div className="flex flex-col items-center md:items-stretch">
-          <div className="text-gray-800 md:text-md font-unica font-bold uppercase">Yeees, it is still me :)</div>
+          <div className="text-gray-800 md:text-md font-unica font-bold uppercase">
+          <img
+                  src={stillMe}
+                  alt="embossed label"
+                  className=" h-8 sm:h-9"
+                />
+          </div>
           <div className="flex flex-col md:flex-row md:justify-between items-center">
             <div className="flex mt-3 space-x-4 md:space-x-4">
               <a
@@ -202,11 +206,10 @@ function Layout() {
                 rel="noreferrer"
               >
                 <img
-                  src={FBLogo}
+                  src={FBLogoHover}
                   alt="fb logo"
-                  className=" transition duration-300 transform w-9 opacity-100 hover:opacity-0"
+                  className="w-9 hover:scale-110"
                 />
-                <img src={FBLogoHover} alt="fb logo hover" className="w-9 absolute opacity-0 hover:opacity-100" />
               </a>
               <a
                 className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
@@ -216,14 +219,9 @@ function Layout() {
                 rel="noreferrer"
               >
                 <img
-                  src={GithubLogo}
-                  alt="github logo"
-                  className=" transition duration-300 transform w-9 hover:opacity-0"
-                />
-                <img
                   src={GithubLogoHover}
-                  alt="github logo hover"
-                  className="w-9 absolute opacity-0 hover:opacity-100 "
+                  alt="github logo"
+                  className="w-9 hover:scale-110"
                 />
               </a>
               <a
@@ -234,14 +232,9 @@ function Layout() {
                 rel="noreferrer"
               >
                 <img
-                  src={LinkedinLogo}
-                  alt="Linkedin logo"
-                  className=" transition duration-300 transform w-9 hover:opacity-0"
-                />
-                <img
                   src={LinkedinLogoHover}
-                  alt="Linkedin logo hover"
-                  className="w-9 absolute opacity-0 hover:opacity-100"
+                  alt="Linkedin logo"
+                  className="w-9 hover:scale-110"
                 />
               </a>
               <a
@@ -251,12 +244,12 @@ function Layout() {
                 aria-label="cv button"
                 rel="noreferrer"
               >
-                <img src={cvLogo} alt="cv logo" className=" transition duration-300 transform w-9 hover:opacity-0" />
-                <img src={cvLogoHover} alt="cv logo hover" className="w-9 absolute opacity-0 hover:opacity-100" />
+                <img src={cvLogoHover} alt="cv logo" className="w-9 hover:scale-110" />
               </a>
             </div>
-            <div className="mt-4 md:mt-0 text-center text-md font-unica text-gray-800 uppercase">© 2024 Viktória Kóta</div>
+            <div className="mt-4 md:mt-0 text-center md:text-md font-bold font-unica text-gray-800 uppercase">© 2024 Viktória Kóta</div>
           </div>
+        </div>
         </div>
       </footer>
     </div>

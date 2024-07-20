@@ -1,4 +1,4 @@
-import profile from '../assets/profile_bw.png';
+import profile from '../assets/profile.png';
 import GithubLogo from '../assets/github-logo.png';
 import GithubLogoHover from '../assets/github-logo-hover.png';
 import LinkedinLogo from '../assets/linkedin-logo.png';
@@ -13,11 +13,11 @@ function AboutMe() {
     <div>
       <div className="container select-none flex flex-col md:flex-row justify-start md:justify-center items-center row:items-start md:mt-10 mx-auto">
         <div className="container select-none font-unica font-semibold uppercase text-gray-800 text-md md:text-lg md:mt-4 text-justify leading-5">
-          <div className="flex justify-center sm:inline-block sm:float-left">
+          <div className="flex justify-center sm:inline-block sm:float-left profile">
             <img src={profile} alt="profile" className="w-40 md:w-52 mt-6 mb-2 me-3" />
           </div>
           <p className="pb-2">Hello!</p>
-          <p className="pb-2">My name is Viktória Kóta, I am a full stack developer and I live in Budapest.</p>
+          <p className="pb-2">My name is Viktória Kóta, I am a frontend developer and I live in Hungary.</p>
           <p>
             My original profession is a light industry engineer. In my previous position, I mostly worked with graphics,
             designing both online and offline materials.

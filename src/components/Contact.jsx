@@ -40,7 +40,7 @@ function Contact() {
   }, [state.succeeded]);
 
   return (
-    <div className="bg-orange-900 bg-opacity-15">
+    <div className="bg-orange-900 bg-opacity-25">
       <div className="container flex flex-col mx-auto md:flex-row justify-center items-center max-w-[1200px] md:w-4/5 py-7">
         <div className="flex flex-row md:flex-col justify-center items-center md:items-start w-5/6 md:w-full lg:w-1/2">
           <p className="text-gray-800 font-bold font-elite text-xl sm:text-2xl md:text-2xl lg:text-3xl w-3/5 md:w-3/5 py-5 md:text-center">

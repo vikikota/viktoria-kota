@@ -36,7 +36,7 @@ function Testimonial() {
 
   return (
     <div className="">
-      <div className=" flex flex-col justify-center items-center max-w-[1200px] py-7 mx-auto">
+      <div className=" flex flex-col justify-center items-center max-w-[1000px] py-7 mx-auto">
         <div className="flex justify-center items-center">
           <div className="flex justify-center basis-1/12" onClick={showPrevText} role="button" tabIndex={0}>
             <img src={leftArrow} className="w-6 hover:scale-110 cursor-pointer" alt="left arrow icon" />

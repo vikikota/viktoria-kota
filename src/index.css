@@ -55,3 +55,7 @@ select:-webkit-autofill:focus {
 .left-right {
   animation: leftRight 1s infinite;
 }
+
+.profile {
+  transform: rotate(4deg);
+}

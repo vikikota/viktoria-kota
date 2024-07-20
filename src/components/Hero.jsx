@@ -29,10 +29,11 @@ function Hero() {
             </div>
             <div className="flex flex-col">
               <div className="font-elite text-xl sm:text-2xl md:text-2xl lg:text-3xl text-orange-800 font-bold uppercase">
-                <p> I am a junior&nbsp;</p>
+                <p> I am a graphic designer and</p>
               </div>
+            
               <div className="font-elite text-xl sm:text-2xl md:text-2xl lg:text-3xl text-orange-800 font-bold uppercase">
-                <p> web developer!</p>
+                <p> frontend developer!</p>
               </div>
             </div>
             <div className="font-elite text-xl sm:text-2xl md:text-2xl lg:text-3xl text-left text-gray-800 font-bold uppercase">
