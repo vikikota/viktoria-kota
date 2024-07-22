@@ -34,7 +34,7 @@ function ScrollDown() {
     <div className="flex justify-end pt-6">
       <img
         src={scrollDown}
-        alt="scroll down icon"
+        alt="scroll down hand icon"
         className={`animate-bounce h-14 sm:h-20 sm:my-4 my-2 ${isVisible ? 'visible' : 'hidden'} cursor-pointer`}
         onClick={() => handleClickScroll('contact')}
       />

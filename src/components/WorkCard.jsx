@@ -59,7 +59,7 @@ function WorkCard({ images, title, description, buttonText, buttonURL, stack }) 
         </div>
       </div>
       {isModalOpen && (
-        <div className="fixed top-0 left-0 z-80 w-screen h-screen bg-black/70 flex justify-center items-center z-10">
+        <div className="fixed top-0 left-0 w-screen h-screen bg-black/70 flex justify-center items-center z-10">
           <div className="max-w-[800px] max-h-[600px] relative">
             <img
               src={images[currentImageIndex]}

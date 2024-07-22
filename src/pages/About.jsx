@@ -1,6 +1,6 @@
 import AboutMe from '../components/AboutMe';
+import Growth from '../components/Growth';
 import ScrollDownButton from '../components/ScrollDownButton';
-import Works from '../components/Works';
 
 function About() {
   return (
@@ -8,8 +8,8 @@ function About() {
       <div id="about-me">
         <AboutMe />
       </div>
-      <div id="works" className="mt-12 md:mt-16">
-        <Works />
+      <div id="growth" className="mt-12 md:mt-16">
+        <Growth />
       </div>
       <ScrollDownButton />
     </div>

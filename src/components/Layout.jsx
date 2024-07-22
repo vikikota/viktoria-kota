@@ -8,10 +8,10 @@ import Skills from '../assets/skills-icon.svg';
 import Works from '../assets/works-icon.svg';
 import ContactIcon from '../assets/contact-icon.svg';
 import Logo from '../assets/logo.png';
-import FBLogoHover from '../assets/facebook-logo-hover.png';
-import GithubLogoHover from '../assets/github-logo-hover.png';
-import LinkedinLogoHover from '../assets/linkedin-logo-hover.png';
-import cvLogoHover from '../assets/cv-icon-hover.png';
+import FBLogo from '../assets/facebook-logo-hover.png';
+import GithubLogo from '../assets/github-logo-hover.png';
+import LinkedinLogo from '../assets/linkedin-logo-hover.png';
+import cvLogo from '../assets/cv-icon-hover.png';
 import stillMe from '../assets/still_me.png';
 import Contact from './Contact';
 import ResumeDownload from './ResumeDownload';
@@ -28,7 +28,7 @@ function Layout() {
 
   useEffect(() => {
     const handleAboutPathChange = async () => {
-      const isAbout = location.pathname.includes('about');
+      const isAbout = location.pathname.includes('works') || location.pathname.includes('about') ;
       setIsAboutMe(isAbout);
     };
 
@@ -50,7 +50,7 @@ function Layout() {
 
   return (
     <div className="bg-craft flex flex-col bg-bottom bg-cover">
-      <div className="mx-auto flex flex-col items-center justify-between max-w-[1000px] xl:max-w-[1200px] 2xl:max-w-[1400px] lg:w-4/5 min-h-dvh">
+      <div className="mx-auto flex flex-col items-center justify-between max- xl:max-w-[1200px] 2xl:max-w-[1400px] min-h-dvh">
         <header className="container flex flex-col md:items-center pt-6 md:pt-10">
           <div className="flex flex-row justify-between items-center md:justify-center relative h-12">
             <NavLink to="/" href="#home" onClick={() => setIsAboutMe(false)}>
@@ -72,7 +72,7 @@ function Layout() {
             <div className="md:hidden flex justify-center">
               <div
                 onClick={handleMenuToggle}
-                className={`h-10 w-10 md:absolute cursor-pointer ${isOpen ? 'block z-10' : 'hidden'}`}
+                className={`h-10 w-10 md:absolute cursor-pointer ${isOpen ? 'block z-30' : 'hidden'}`}
                 role="button"
                 tabIndex={0}
               >
@@ -83,10 +83,10 @@ function Layout() {
               to="/"
               href="#home"
               onClick={isOpen ? handleMenuToggle : ''}
-              className="flex flex-col items-center md:inline-block mt-8 md:mt-0 md:me-10 hover:scale-110 text-gray-700 hover:text-gray-900"
+              className="flex flex-col items-center md:inline-block mt-8 md:mt-0 md:me-10 hover:scale-110 text-gray-800 hover:text-gray-900"
             >
-              <img src={Home} className={`${isOpen ? 'w-12 block' : 'hidden'}`} alt="home icon" />
-              <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold cursor-pointer">
+              <img src={Home} className={`${isOpen ? 'w-10 block' : 'hidden'}`} alt="home icon" />
+              <p className="text-lg md:text-2xl text-white md:text-gray-800 md:hover:text-gray-800 md:font-semibold cursor-pointer">
                 Home
               </p>
             </NavLink>
@@ -101,10 +101,10 @@ function Layout() {
                     }
                   : () => handleClickScroll('about-me')
               }
-              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-700 hover:text-gray-900"
+              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-800 hover:text-gray-900"
             >
-              <img src={Me} className={`${isOpen ? 'w-12 block' : 'hidden'}`} alt="about icon" />
-              <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
+              <img src={Me} className={`${isOpen ? 'w-10 block' : 'hidden'}`} alt="about icon" />
+              <p className="text-lg md:text-2xl text-white md:text-gray-800 md:hover:text-gray-800 md:font-semibold">
                 Me
               </p>
             </NavLink>
@@ -114,16 +114,16 @@ function Layout() {
               onClick={
                 isOpen
                   ? () => {
-                      handleClickScroll('works');
+                      handleClickScroll('growth');
                       handleMenuToggle();
                     }
-                  : () => handleClickScroll('works')
+                  : () => handleClickScroll('growth')
               }
-              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-700 hover:text-gray-900"
+              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-800 hover:text-gray-900"
             >
-              <img src={Works} className={`${isOpen ? 'w-11 block' : 'hidden'}`} alt="skills icon" />
-              <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
-                Works
+              <img src={Works} className={`${isOpen ? 'w-9 block' : 'hidden'}`} alt="growth icon" />
+              <p className="text-lg md:text-2xl text-white md:text-gray-800 md:hover:text-gray-800 md:font-semibold">
+                Growth
               </p>
             </NavLink>
             <NavLink
@@ -137,11 +137,29 @@ function Layout() {
                     }
                   : () => handleClickScroll('skills')
               }
-              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-700 hover:text-gray-900"
+              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-800 hover:text-gray-900"
             >
-              <img src={Skills} className={`${isOpen ? 'w-9 block' : 'hidden'}`} alt="skills icon" />
-              <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
+              <img src={Skills} className={`${isOpen ? 'w-8 block' : 'hidden'}`} alt="skills icon" />
+              <p className="text-lg md:text-2xl text-white md:text-gray-800 md:hover:text-gray-800 md:font-semibold">
                 Skills
+              </p>
+            </NavLink>
+            <NavLink
+              to="/works"
+              href="#works"
+              onClick={
+                isOpen
+                  ? () => {
+                      handleClickScroll('works');
+                      handleMenuToggle();
+                    }
+                  : () => handleClickScroll('works')
+              }
+              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-800 hover:text-gray-900"
+            >
+              <img src={Works} className={`${isOpen ? 'w-9 block' : 'hidden'}`} alt="skills icon" />
+              <p className="text-lg md:text-2xl text-white md:text-gray-800 md:hover:text-gray-800 md:font-semibold">
+                Works
               </p>
             </NavLink>
             <NavLink
@@ -153,10 +171,10 @@ function Layout() {
                     }
                   : () => handleClickScroll('contact')
               }
-              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:mr-0 hover:scale-110 text-gray-700 hover:text-gray-900"
+              className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:mr-0 hover:scale-110 text-gray-800 hover:text-gray-900"
             >
               <img src={ContactIcon} className={`${isOpen ? 'w-9 block' : 'hidden'}`} alt="contact icon" />
-              <p className="text-xl md:text-2xl text-white md:text-gray-700 md:hover:text-gray-800 md:font-semibold">
+              <p className="text-lg md:text-2xl text-white md:text-gray-800 md:hover:text-gray-800 md:font-semibold">
                 Contact
               </p>
             </NavLink>
@@ -206,7 +224,7 @@ function Layout() {
                 rel="noreferrer"
               >
                 <img
-                  src={FBLogoHover}
+                  src={FBLogo}
                   alt="fb logo"
                   className="w-9 hover:scale-110"
                 />
@@ -219,7 +237,7 @@ function Layout() {
                 rel="noreferrer"
               >
                 <img
-                  src={GithubLogoHover}
+                  src={GithubLogo}
                   alt="github logo"
                   className="w-9 hover:scale-110"
                 />
@@ -232,7 +250,7 @@ function Layout() {
                 rel="noreferrer"
               >
                 <img
-                  src={LinkedinLogoHover}
+                  src={LinkedinLogo}
                   alt="Linkedin logo"
                   className="w-9 hover:scale-110"
                 />
@@ -244,10 +262,10 @@ function Layout() {
                 aria-label="cv button"
                 rel="noreferrer"
               >
-                <img src={cvLogoHover} alt="cv logo" className="w-9 hover:scale-110" />
+                <img src={cvLogo} alt="cv logo" className="w-9 hover:scale-110" />
               </a>
             </div>
-            <div className="mt-4 md:mt-0 text-center md:text-md font-bold font-unica text-gray-800 uppercase">© 2024 Viktória Kóta</div>
+            <div className="mt-4 md:mt-0 text-center md:text-lg font-bold font-unica text-gray-800 uppercase">© 2024 Viktória Kóta</div>
           </div>
         </div>
         </div>

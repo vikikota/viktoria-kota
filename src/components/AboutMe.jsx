@@ -1,12 +1,9 @@
 import profile from '../assets/profile.png';
-import GithubLogo from '../assets/github-logo.png';
-import GithubLogoHover from '../assets/github-logo-hover.png';
-import LinkedinLogo from '../assets/linkedin-logo.png';
-import LinkedinLogoHover from '../assets/linkedin-logo-hover.png';
+import GithubLogo from '../assets/github-logo-hover.png';
+import LinkedinLogo from '../assets/linkedin-logo-hover.png';
 import leftArrow from '../assets/left-arrow.svg';
 import resume from '../assets/Kóta-Viktória-CV-EN.pdf';
-import cvLogo from '../assets/cv-icon.png';
-import cvLogoHover from '../assets/cv-icon-hover.png';
+import cvLogo from '../assets/cv-icon-hover.png';
 
 function AboutMe() {
   return (
@@ -14,10 +11,10 @@ function AboutMe() {
       <div className="container select-none flex flex-col md:flex-row justify-start md:justify-center items-center row:items-start md:mt-10 mx-auto">
         <div className="container select-none font-unica font-semibold uppercase text-gray-800 text-md md:text-lg md:mt-4 text-justify leading-5">
           <div className="flex justify-center sm:inline-block sm:float-left profile">
-            <img src={profile} alt="profile" className="w-40 md:w-52 mt-6 mb-2 me-3" />
+            <img src={profile} alt="profile" className="w-40 md:w-52 mt-6 mb-2 md:me-9" />
           </div>
           <p className="pb-2">Hello!</p>
-          <p className="pb-2">My name is Viktória Kóta, I am a frontend developer and I live in Hungary.</p>
+          <p className="pb-2">My name is Viktória Kóta, I am a graphic designer and frontend developer.</p>
           <p>
             My original profession is a light industry engineer. In my previous position, I mostly worked with graphics,
             designing both online and offline materials.
@@ -39,9 +36,9 @@ function AboutMe() {
           </p>
           <p>I am all about constantly learning and digging into different parts of coding.</p>
           <div className=" flex flex-row justify-center items-center space-x-4 mx-auto mt-6 mb-6">
-            <div className="flex flex-row justify-start">
-              <a
-                className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer me-3"
+            <div className="flex space-x-2 md:space-x-2">
+                       <a
+                className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
                 href="https://github.com/vikikota"
                 target="_blank"
                 aria-label="github button"
@@ -50,16 +47,11 @@ function AboutMe() {
                 <img
                   src={GithubLogo}
                   alt="github logo"
-                  className=" transition duration-300 transform w-9 hover:opacity-0"
-                />
-                <img
-                  src={GithubLogoHover}
-                  alt="github logo hover"
-                  className="w-9 absolute opacity-0 hover:opacity-100 "
+                  className="w-9 hover:scale-110"
                 />
               </a>
               <a
-                className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer me-3"
+                className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
                 href="https://www.linkedin.com/in/viktoria-kota-1b0a382ab/"
                 target="_blank"
                 aria-label="linkedin button"
@@ -68,12 +60,7 @@ function AboutMe() {
                 <img
                   src={LinkedinLogo}
                   alt="Linkedin logo"
-                  className=" transition duration-300 transform w-9 hover:opacity-0"
-                />
-                <img
-                  src={LinkedinLogoHover}
-                  alt="Linkedin logo hover"
-                  className="w-9 absolute opacity-0 hover:opacity-100"
+                  className="w-9 hover:scale-110"
                 />
               </a>
               <a
@@ -83,8 +70,7 @@ function AboutMe() {
                 aria-label="cv button"
                 rel="noreferrer"
               >
-                <img src={cvLogo} alt="cv logo" className=" transition duration-300 transform w-9 hover:opacity-0" />
-                <img src={cvLogoHover} alt="cv logo hover" className="w-9 absolute opacity-0 hover:opacity-100" />
+                <img src={cvLogo} alt="cv logo" className="w-9 hover:scale-110" />
               </a>
             </div>
             <div className="z-0">
