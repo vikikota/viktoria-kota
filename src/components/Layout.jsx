@@ -50,7 +50,7 @@ function Layout() {
 
   return (
     <div className="bg-craft flex flex-col bg-bottom bg-cover">
-      <div className="mx-auto flex flex-col items-center justify-between max- xl:max-w-[1200px] 2xl:max-w-[1400px] min-h-dvh">
+      <div className="mx-auto flex flex-col items-center justify-between xl:max-w-[1200px] 2xl:max-w-[1400px] min-h-dvh">
         <header className="container flex flex-col md:items-center pt-6 md:pt-10">
           <div className="flex flex-row justify-between items-center md:justify-center relative h-12">
             <NavLink to="/" href="#home" onClick={() => setIsAboutMe(false)}>
@@ -67,7 +67,7 @@ function Layout() {
             </div>
           </div>
           <nav
-            className={` top-0 right-0 text-right md:relative md:flex md:w-auto font-unica  ${isOpen ? 'block bg-gray-800 bg-opacity-80 min-h-screen py-4 px-4 w-1/10 shadow-lg fixed' : 'hidden'}`}
+            className={` top-0 right-0 text-right md:relative md:flex md:w-auto font-unica  ${isOpen ? 'block bg-gray-800 bg-opacity-80 min-h-screen py-4 px-4 w-1/10 shadow-lg fixed z-50' : 'hidden'}`}
           >
             <div className="md:hidden flex justify-center">
               <div
