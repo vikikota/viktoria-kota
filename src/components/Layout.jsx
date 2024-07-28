@@ -1,11 +1,12 @@
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import MenuOpen from '../assets/menu-open.svg';
+import MenuOpen from '../assets/menu-open.png';
 import MenuClose from '../assets/menu-close.svg';
 import Home from '../assets/home-icon.svg';
 import Me from '../assets/me-icon.svg';
 import Skills from '../assets/skills-icon.svg';
 import Works from '../assets/works-icon.svg';
+import Growth from '../assets/growth-icon.svg';
 import ContactIcon from '../assets/contact-icon.svg';
 import Logo from '../assets/logo.png';
 import FBLogo from '../assets/facebook-logo-hover.png';
@@ -18,18 +19,22 @@ import ResumeDownload from './ResumeDownload';
 import Stack from './Stack';
 import AboutMeShort from './AboutMeShort';
 import ScrollDown from './ScrollDown';
-import resume from '../assets/Kóta-Viktória-CV-EN.pdf';
+import resume from '../assets/Kota-Viktoria-CV-EN.pdf';
 import Testimonial from './Testimonial';
 
 function Layout() {
   const [isOpen, setIsOpen] = useState(false);
   const [isAboutMe, setIsAboutMe] = useState(false);
+  const [isWorks, setIsWorks] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     const handleAboutPathChange = async () => {
-      const isAbout = location.pathname.includes('works') || location.pathname.includes('about') ;
+      const isAbout = location.pathname.includes('about');
       setIsAboutMe(isAbout);
+
+      const isWork = location.pathname.includes('works');
+      setIsWorks(isWork);
     };
 
     handleAboutPathChange();
@@ -51,8 +56,8 @@ function Layout() {
   return (
     <div className="bg-craft flex flex-col bg-bottom bg-cover">
       <div className="mx-auto flex flex-col items-center justify-between xl:max-w-[1200px] 2xl:max-w-[1400px] min-h-dvh">
-        <header className="container flex flex-col md:items-center pt-6 md:pt-10">
-          <div className="flex flex-row justify-between items-center md:justify-center relative h-12">
+        <header className="container flex flex-col md:items-center pt-6">
+          <div className="flex flex-row justify-between items-center md:justify-center relative md:h-16">
             <NavLink to="/" href="#home" onClick={() => setIsAboutMe(false)}>
               <div>
                 <img src={Logo} alt="logo" className="h-9 md:h-12" />
@@ -121,7 +126,7 @@ function Layout() {
               }
               className="flex flex-col items-center md:inline-block mt-4 md:mt-0 md:me-10 hover:scale-110 text-gray-800 hover:text-gray-900"
             >
-              <img src={Works} className={`${isOpen ? 'w-9 block' : 'hidden'}`} alt="growth icon" />
+              <img src={Growth} className={`${isOpen ? 'w-9 block' : 'hidden'}`} alt="growth icon" />
               <p className="text-lg md:text-2xl text-white md:text-gray-800 md:hover:text-gray-800 md:font-semibold">
                 Growth
               </p>
@@ -181,9 +186,11 @@ function Layout() {
           </nav>
         </header>
         <Outlet />
-        <div id="resume2" className="hidden my-4 md:flex">
-          <ResumeDownload />
-        </div>
+        {!isWorks && (
+          <div id="resume2" className="hidden my-4 md:flex">
+            <ResumeDownload />
+          </div>
+        )}
         <ScrollDown />
       </div>
       <div id="resume" className="flex md:hidden my-6 w-4/5 mx-auto">
@@ -206,68 +213,54 @@ function Layout() {
         <Contact />
       </div>
       <footer className="bg-orange-900 bg-opacity-25">
-      <div className='container max-w-[1400px] mx-auto py-4'>
-        <div className="flex flex-col items-center md:items-stretch">
-          <div className="text-gray-800 md:text-md font-unica font-bold uppercase">
-          <img
-                  src={stillMe}
-                  alt="embossed label"
-                  className=" h-8 sm:h-9"
-                />
-          </div>
-          <div className="flex flex-col md:flex-row md:justify-between items-center">
-            <div className="flex mt-3 space-x-4 md:space-x-4">
-              <a
-                className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
-                href="https://facebook.com/Babszem/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src={FBLogo}
-                  alt="fb logo"
-                  className="w-9 hover:scale-110"
-                />
-              </a>
-              <a
-                className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
-                href="https://github.com/vikikota"
-                target="_blank"
-                aria-label="github button"
-                rel="noreferrer"
-              >
-                <img
-                  src={GithubLogo}
-                  alt="github logo"
-                  className="w-9 hover:scale-110"
-                />
-              </a>
-              <a
-                className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
-                href="https://www.linkedin.com/in/viktoria-kota-1b0a382ab/"
-                target="_blank"
-                aria-label="linkedin button"
-                rel="noreferrer"
-              >
-                <img
-                  src={LinkedinLogo}
-                  alt="Linkedin logo"
-                  className="w-9 hover:scale-110"
-                />
-              </a>
-              <a
-                className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
-                href={resume}
-                target="_blank"
-                aria-label="cv button"
-                rel="noreferrer"
-              >
-                <img src={cvLogo} alt="cv logo" className="w-9 hover:scale-110" />
-              </a>
+        <div className="container mx-auto py-4">
+          <div className="flex flex-col items-center md:items-stretch">
+            <div className="text-gray-800 md:text-md font-unica font-bold uppercase">
+              <img src={stillMe} alt="embossed label" className=" h-8 sm:h-9" />
             </div>
-            <div className="mt-4 md:mt-0 text-center md:text-lg font-bold font-unica text-gray-800 uppercase">© 2024 Viktória Kóta</div>
+            <div className="flex flex-col md:flex-row md:justify-between items-center">
+              <div className="flex mt-3 space-x-4 md:space-x-4">
+                <a
+                  className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
+                  href="https://facebook.com/Babszem/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={FBLogo} alt="fb logo" className="w-9 hover:scale-110" />
+                </a>
+                <a
+                  className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
+                  href="https://github.com/vikikota"
+                  target="_blank"
+                  aria-label="github button"
+                  rel="noreferrer"
+                >
+                  <img src={GithubLogo} alt="github logo" className="w-9 hover:scale-110" />
+                </a>
+                <a
+                  className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
+                  href="https://www.linkedin.com/in/viktoria-kota-1b0a382ab/"
+                  target="_blank"
+                  aria-label="linkedin button"
+                  rel="noreferrer"
+                >
+                  <img src={LinkedinLogo} alt="Linkedin logo" className="w-9 hover:scale-110" />
+                </a>
+                <a
+                  className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
+                  href={resume}
+                  target="_blank"
+                  aria-label="cv button"
+                  rel="noreferrer"
+                >
+                  <img src={cvLogo} alt="cv logo" className="w-9 hover:scale-110" />
+                </a>
+              </div>
+              <div className="mt-4 md:mt-0 text-center md:text-lg font-bold font-unica text-gray-800 uppercase">
+                © 2024 Viktória Kóta
+              </div>
+            </div>
           </div>
-        </div>
         </div>
       </footer>
     </div>

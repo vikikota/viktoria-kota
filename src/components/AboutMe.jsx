@@ -2,14 +2,14 @@ import profile from '../assets/profile.png';
 import GithubLogo from '../assets/github-logo-hover.png';
 import LinkedinLogo from '../assets/linkedin-logo-hover.png';
 import leftArrow from '../assets/left-arrow.svg';
-import resume from '../assets/Kóta-Viktória-CV-EN.pdf';
+import resume from '../assets/Kota-Viktoria-CV-EN.pdf';
 import cvLogo from '../assets/cv-icon-hover.png';
 
 function AboutMe() {
   return (
     <div>
       <div className="container select-none flex flex-col md:flex-row justify-start md:justify-center items-center row:items-start md:mt-10 mx-auto">
-        <div className="container select-none font-unica font-semibold uppercase text-gray-800 text-md md:text-lg md:mt-4 text-justify leading-5">
+        <div className="container select-none font-unica font-semibold uppercase text-gray-800 text-md md:text-lg md:mt-4 text-justify  leading-5">
           <div className="flex justify-center sm:inline-block sm:float-left profile">
             <img src={profile} alt="profile" className="w-40 md:w-52 mt-6 mb-2 md:me-9" />
           </div>
@@ -34,21 +34,16 @@ function AboutMe() {
           <p className="pb-2">
             As I began to learn programming, I felt that this was the path I had been searching for.
           </p>
-          <p>I am all about constantly learning and digging into different parts of coding.</p>
           <div className=" flex flex-row justify-center items-center space-x-4 mx-auto mt-6 mb-6">
-            <div className="flex space-x-2 md:space-x-2">
-                       <a
+            <div className="flex space-x-2">
+              <a
                 className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
                 href="https://github.com/vikikota"
                 target="_blank"
                 aria-label="github button"
                 rel="noreferrer"
               >
-                <img
-                  src={GithubLogo}
-                  alt="github logo"
-                  className="w-9 hover:scale-110"
-                />
+                <img src={GithubLogo} alt="github logo" className="w-9 hover:scale-110" />
               </a>
               <a
                 className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"
@@ -57,11 +52,7 @@ function AboutMe() {
                 aria-label="linkedin button"
                 rel="noreferrer"
               >
-                <img
-                  src={LinkedinLogo}
-                  alt="Linkedin logo"
-                  className="w-9 hover:scale-110"
-                />
+                <img src={LinkedinLogo} alt="Linkedin logo" className="w-9 hover:scale-110" />
               </a>
               <a
                 className="relative flex justify-center md:justify-start items-center hover:scale-110 cursor-pointer"

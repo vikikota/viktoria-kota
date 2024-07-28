@@ -21,14 +21,13 @@ import rpsls1 from '../assets/works/rpsls_1.jpg';
 import rpsls2 from '../assets/works/rpsls_2.jpg';
 import portfolio1 from '../assets/works/portfolio_1.jpg';
 import portfolio2 from '../assets/works/portfolio_2.jpg';
-import portfolio3 from '../assets/works/portfolio_3.jpg';
 import WorkCard from './WorkCard';
 
 function DevWorks() {
   const data = [
     {
       id: 1,
-      images: [portfolio1, portfolio2, portfolio3],
+      images: [portfolio1, portfolio2],
       title: 'My portfolio website',
       description:
         'Expanding my skills, I dedicated my personal portfolio website to learning Tailwind, emphasizing my commitment to user-friendly UX design.',
@@ -51,12 +50,12 @@ function DevWorks() {
       images: [hangman1, hangman2],
       title: 'Hangman',
       description:
-        'As part of a mini-team project, I practiced advanced JavaScript functions and DOM manipulation through the development of the game.',
+        'As a mini project, I practiced advanced JavaScript functions and DOM manipulation through developing the game.',
       buttonText: 'TRY IT',
       buttonURL: 'https://vikikota.github.io/hangman/',
       stack: [html, css, js],
     },
-    {
+   /*  {
       id: 4,
       images: [rpsls1, rpsls2],
       title: 'Rock, Paper, Scissors, Lizard, Spock',
@@ -65,17 +64,17 @@ function DevWorks() {
       buttonText: 'TRY IT',
       buttonURL: 'https://vikikota.github.io/rock-paper-scissors-lizard-spock/',
       stack: [html, css, js],
-    },
+    }, */
   ];
 
   return (
     <div>
-      <div className="flex justify-center">
+      <div className="flex justify-center items-center pt-8 md:pt-12">
         <p className="font-elite font-bold text-xl xs:text-2xl text-gray-800 border-2 border-gray-800 rounded-sm px-4 pt-2 shadow-sm">
-          WORKS
+          DEV WORKS
         </p>
       </div>
-      <div className="container flex flex-wrap flex-row justify-center items-center md:items-start lg:mt-6 mx-auto relative">
+      <div className=" flex flex-wrap flex-row justify-center items-center lg:mt-6 mx-auto relative">
         {data.map((item) => (
           <WorkCard key={uuidv4()} {...item} />
         ))}

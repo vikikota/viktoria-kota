@@ -1,15 +1,17 @@
 import DevWorks from '../components/DevWorks';
+import GraphicWorks from '../components/GraphicWorks';
 import ScrollDownButton from '../components/ScrollDownButton';
 
-function About() {
+function Works() {
   return (
     <div>
-      <div id="about-me">
+      <div id="dev-works">
         <DevWorks />
+        <GraphicWorks />
       </div>
        <ScrollDownButton />
     </div>
   );
 }
 
-export default About;
+export default Works;

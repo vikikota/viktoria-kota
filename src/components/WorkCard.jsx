@@ -27,7 +27,7 @@ function WorkCard({ images, title, description, buttonText, buttonURL, stack }) 
   };
 
   return (
-    <div className="transition shadow-lg flex flex-col m-2 min-w-[150px] max-w-[300px]">
+    <div className="transition shadow-lg flex flex-col m-2 min-w-[150px] max-w-[290px]">
       <div className="flex relative font-semibold text-md md:text-lg text-justify leading-5 hover:scale-102">
         <img
           src={images[currentImageIndex]}

@@ -30,7 +30,7 @@ function Growth() {
       image: uxDesign,
       title: 'Pásztor Dávid - UX Design - book',
       description:
-        'UX DESIGN. Hogyan tervezz felhasználóbarát és szerethető alkalmazásokat? Az első magyar nyelvű UX könyv. 149 oldal, tele gyakorlati példákkal és illusztrációkkal.',
+        'UX DESIGN. How to design user-friendly and lovable applications? The first UX book in Hungarian. 149 pages, filled with practical examples and illustrations.',
         buttonURL: 'https://uxstudioteam.com/ux-blog/ux-konyv/',
         process: 100
     },
@@ -44,7 +44,7 @@ function Growth() {
           PROFESSIONAL GROWTH
         </p>
       </div>
-      <div className="container flex flex-wrap flex-row justify-center items-center md:items-start lg:mt-6 mx-auto relative">
+      <div className=" flex flex-wrap flex-row justify-center items-center md:items-start lg:mt-6 mx-auto relative">
         {data.map((item) => (
           <GrowthCard key={uuidv4()} {...item} />
         ))}

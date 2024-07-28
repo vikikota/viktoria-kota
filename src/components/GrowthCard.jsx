@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import check from '../assets/check.png';
 
 function GrowthCard({ image, title, description, process, buttonURL }) {
   return (
-    <div className="flex flex-col md:flex-row m-2 mx-auto w-full min-w-[350px] max-w-[1000px] bg-white bg-opacity-40 shadow-lg">
+    <div className="flex flex-col md:flex-row m-2 mx-auto w-full md:min-w-[350px] max-w-[1000px] bg-white bg-opacity-40 shadow-lg">
       <div className="justify-start items-center md:w-1/5 hidden md:flex">
         <img src={image} className="h-full object-cover" alt="course thumbnail" />
       </div>
@@ -19,7 +20,7 @@ function GrowthCard({ image, title, description, process, buttonURL }) {
                 <a href={buttonURL} target="_blank" rel="noopener noreferrer">
                   <button
                     type="button"
-                    className="py-0.5 px-2 font-elite text-xs text-white bg-orange-800 shadow-sm hover:scale-105"
+                    className="py-1 px-2 font-elite text-xs text-white bg-orange-800 shadow-sm hover:scale-105"
                   >
                     CHECK IT OUT
                   </button>
@@ -35,9 +36,14 @@ function GrowthCard({ image, title, description, process, buttonURL }) {
             <p className="font-unica uppercase text-gray-800 text-sm">{description}</p>
           </div>
           <div>
-            <p className="font-unica font-bold uppercase text-gray-800 text-sm">process - {process}%</p>
+            <p className="flex items-center font-unica font-bold uppercase text-gray-800 text-sm">
+              process - {process}%{' '}
+              <img src={check} alt="check" className={process === 100 ? 'm-2 w-7 animate-bounce' : 'hidden'} />
+            </p>
             <div className="w-full bg-gray-300 rounded-sm h-2 overflow-hidden mt-2">
-              <div className="bg-green-600 h-full" style={{ width: `${process}%`}}>.</div>
+              <div className="bg-green-600 h-full" style={{ width: `${process}%` }}>
+                .
+              </div>
             </div>
           </div>
         </div>
