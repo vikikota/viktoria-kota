@@ -7,7 +7,7 @@ function AboutMeShort({ handleClickScroll }) {
     <div className="bg-black bg-opacity-80 ">
       <div className="container flex flex-col md:flex-row items-end md:items-center justify-around max-w-[1200px] md:w-4/5 mx-auto md:space-x-6 mt-8 md:mt-0 lg:mt-4 xl:mt-24 py-8">
         <div className="flex flex-row items-center space-x-4 md:space-x-12">
-          <div className="w-60 md:w-52 profile">
+          <div className="min-w-20 max-w-28 profile">
             <img src={profile} alt="profile" className="" />
           </div>
           <div>
