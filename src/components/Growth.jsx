@@ -22,7 +22,7 @@ function Growth() {
       title: 'FIGMA MasterClass - Web and mobile app UI/UX design',
       description: 'We get to know Figma in depth, enabling us to confidently use it in UI/UX design planning',
       buttonURL: '#',
-      process: 49,
+      process: 52,
     },
     {
       id: 3,
