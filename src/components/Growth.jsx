@@ -3,10 +3,19 @@ import GrowthCard from './GrowthCard';
 import git from '../assets/growth/git.jpg';
 import vue from '../assets/growth/vue.jpg';
 import figma from '../assets/growth/figma.jpg';
+import typo from '../assets/growth/typo.jpg';
 import uxDesign from '../assets/growth/ux_design.jpg';
 
 function Growth() {
   const data = [
+    {
+      id: 5,
+      image: typo,
+      title: 'Virágvölgyi Péter - A tipográfia mestersége számítógéppel - BOOK',
+      description: 'Ez a kézikönyv szinte mindenkihez szól, aki szövegek előállításával foglalkozik.E könyvből elsajátíthatóak az alapok, hogy kulturált tipográfiai formába tudjuk önteni szövegeinket. Ha szeretné tudni, hogy milyen oldalméretet válasszon, hogy mekkorák legyenek a margók, hogy melyik betűtípus alkalmas a szövegnek és melyik a címeknek, akkor segítséget nyújthat ez a könyv, melyben számos olyan ismeret is helyet kapott, ami már a tipográfia magasiskolájának nevezhető.',
+      buttonURL: '#',
+      process: 19,
+    },
     {
       id: 4,
       image: figma,
@@ -18,7 +27,7 @@ function Growth() {
     {
       id: 3,
       image: uxDesign,
-      title: 'Pásztor Dávid - UX Design - book',
+      title: 'Pásztor Dávid - UX Design - BOOK',
       description:
         'UX DESIGN. How to design user-friendly and lovable applications? The first UX book in Hungarian. 149 pages, filled with practical examples and illustrations.',
       buttonURL: 'https://uxstudioteam.com/ux-blog/ux-konyv/',
