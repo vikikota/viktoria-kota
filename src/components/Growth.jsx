@@ -40,7 +40,7 @@ function Growth() {
       description:
         'This comprehensive course covers everything you need to know to master Vue.js, from the fundamentals to advanced concepts like the Composition API, Vue Router, and Vuex. It features over 30 hours of video content, numerous coding exercises, and a final project to test your skills.',
       buttonURL: 'https://www.udemy.com/course/vuejs-2-the-complete-guide/?couponCode=24T7MT72224',
-      process: 47,
+      process: 51,
     },
     {
       id: 1,
