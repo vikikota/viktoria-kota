@@ -5,9 +5,19 @@ import vue from '../assets/growth/vue.jpg';
 import figma from '../assets/growth/figma.jpg';
 import typo from '../assets/growth/typo.jpg';
 import uxDesign from '../assets/growth/ux_design.jpg';
+import ux from '../assets/growth/ux_certificate.jpg';
 
 function Growth() {
   const data = [
+    {
+      id: 6,
+      image: ux,
+      title: 'XLabs - UX designer course',
+      description:
+        'The XLabs UX course is a market leader in Hungary. It uniquely guides participants through a real project, providing hands-on experience to learn the UX profession in practice.',
+      buttonURL: 'https://www.xlabs.hu/courses/ux-project',
+      process: 100,
+    },
     {
       id: 5,
       image: typo,
@@ -50,7 +60,7 @@ function Growth() {
         'Master the essentials and the tricky bits: rebasing, squashing, stashing, reflogs, blobs, trees, & more!',
       buttonURL: 'https://www.udemy.com/course/git-and-github-bootcamp/?couponCode=24T7MT72224/',
       process: 100,
-    },
+    }
   ];
 
   return (
